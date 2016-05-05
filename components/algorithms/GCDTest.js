@@ -60,9 +60,9 @@ export default class GCDTest extends Component {
             <p>Примените к ним алгоритм Евклида.</p>
             <p>Вводите полученные значения в следующую таблицу:</p>
             <div className="table">
-              <Table data={this.state.table.map(row => row.map(col => 
-                <input type="number"/>
-              ))}/>
+              <Table data={this.state.table.map((row, i) => row.map((col, j) => {
+                return i > 0 && j < 2 ? '' : <input type="number"/>
+              }))}/>
             </div>
             <code className="answer-area">
               Ответ: НОД({this.state.input.join(', ')}) = &nbsp;
