@@ -10,6 +10,7 @@ import { Router, Route, IndexRoute, browserHistory } from 'react-router'
 import { App, Home, About } from './components'
 import { GCDShow, GCDTrainer, GCDTest } from './components/algorithms'
 import { axbyShow, axbyTrainer, axbyTest } from './components/algorithms'
+import { FractionShow, FractionTrainer, FractionTest } from './components/algorithms'
 
 const DevTools = createDevTools(
   <DockMonitor toggleVisibilityKey="ctrl-h" changePositionKey="ctrl-q">
@@ -28,6 +29,9 @@ ReactDOM.render(
       <Route path="axby1/show" component={axbyShow}/>
       <Route path="axby1/trainer" component={axbyTrainer}/>
       <Route path="axby1/test" component={axbyTest}/>
+      <Route path="fraction/show" component={FractionShow}/>
+      <Route path="fraction/trainer" component={FractionTrainer}/>
+      <Route path="fraction/test" component={FractionTest}/>
     </Route>
   </Router>,
   document.getElementById('mount')

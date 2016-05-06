@@ -5,3 +5,7 @@ export GCDTest from './GCDTest'
 export axbyShow from './axbyShow'
 export axbyTrainer from './axbyTrainer'
 export axbyTest from './axbyTest'
+
+export FractionShow from './FractionShow'
+export FractionTrainer from './FractionTrainer'
+export FractionTest from './FractionTest'

@@ -11,7 +11,7 @@ export default function App({ children }) {
         <MainNavigation items={[
           {title: 'НОД', url: '/gcd'},
           {title: 'ax + by = 1', url: '/axby1'},
-          {title: 'Цепная дробь', url: '/chain'},
+          {title: 'Цепная дробь', url: '/fraction'},
           {title: 'Подходящие дроби', url: '/suit'},
           {title: 'Обратоное число', url: '/rev'},
           {title: 'Диофантово уравнение ', url: '/diofan'},
