@@ -12,7 +12,7 @@ export default function App({ children }) {
           {title: 'НОД', url: '/gcd'},
           {title: 'ax + by = 1', url: '/axby1'},
           {title: 'Цепная дробь', url: '/fraction'},
-          {title: 'Подходящие дроби', url: '/suit'},
+          {title: 'Подходящие дроби', url: '/convergents'},
           {title: 'Обратоное число', url: '/rev'},
           {title: 'Диофантово уравнение ', url: '/diofan'},
           {title: 'Деление многочлена на бином', url: '/div'},

@@ -11,6 +11,7 @@ import { App, Home, About } from './components'
 import { GCDShow, GCDTrainer, GCDTest } from './components/algorithms'
 import { axbyShow, axbyTrainer, axbyTest } from './components/algorithms'
 import { FractionShow, FractionTrainer, FractionTest } from './components/algorithms'
+import { ConvergentsShow, ConvergentsTrainer, ConvergentsTest } from './components/algorithms'
 
 const DevTools = createDevTools(
   <DockMonitor toggleVisibilityKey="ctrl-h" changePositionKey="ctrl-q">
@@ -32,6 +33,10 @@ ReactDOM.render(
       <Route path="fraction/show" component={FractionShow}/>
       <Route path="fraction/trainer" component={FractionTrainer}/>
       <Route path="fraction/test" component={FractionTest}/>
+      <Route path="convergents/show" component={ConvergentsShow}/>
+      <Route path="convergents/trainer" component={ConvergentsTrainer}/>
+      <Route path="convergents/test" component={ConvergentsTest}/>
+      
     </Route>
   </Router>,
   document.getElementById('mount')

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Table from '../Table'
 
-export default class axbyShow extends Component {
+export default class ConvergentsShow extends Component {
 
   constructor (props) {
     super(props)
@@ -11,7 +11,7 @@ export default class axbyShow extends Component {
   state = {}
 
   refreshExample () {
-    fetch('http://bastards.noip.me:8888/solve/axby1')
+    fetch('http://bastards.noip.me:8888/solve/convergents')
       .then(response => response.json())
       .then(example => {
         this.setState(example)
@@ -24,17 +24,17 @@ export default class axbyShow extends Component {
       <div>
         {this.state.input ? 
           <div>
-            <h1>Найти (x,y) удовлетворяющих условию</h1>
+            <h1>Нахождение подходящих дробей</h1>
             <h2>Демонстрация</h2>
-            <p>{this.state.input[0]}x + {this.state.input[1]}y = 1</p>
-            <p>Для решения этой задачи нам необходимо воспользоваться расширенным алгоритмом Евклида, как показано в следующей таблице.</p>
+            <p>Дана дробь {this.state.input[0]}/{this.state.input[1]}</p>
+            <p>Возьмем {this.state.input[0]} и {this.state.input[1]} и применим расширенный алгоритм Евклида для подходящих дробей.</p>
+            <p>Получим следующую таблицу:</p>
             <Table data={this.state.table.map(row => row.map(col => 
                 <div className="number-wrap">{col}</div>
             ))}/>
-            <code>Ответ: ({this.state.output.join('; ')})</code>
             <button onClick={e => this.refreshExample()}>Обновить</button>
           </div>
-          : ''
+          : null
         }
       </div>
     )
