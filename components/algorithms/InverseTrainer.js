@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import Table from '../Table'
 
-export default class axbyTrainer extends Component {
+export default class InverseTrainer extends Component {
 
   constructor (props) {
     super(props)
@@ -12,7 +12,7 @@ export default class axbyTrainer extends Component {
   state = {}
 
   refreshExample () {
-    fetch('http://bastards.noip.me:8888/solve/axby1')
+    fetch('http://bastards.noip.me:8888/solve/inverse')
       .then(response => response.json())
       .then(example => {
         let inputs = ReactDOM.findDOMNode(this).querySelectorAll('input[type="number"]'); // Fuck JavaScript
@@ -42,11 +42,11 @@ export default class axbyTrainer extends Component {
   render () {
     return (
       <div>
-        <h1>Найти (x,y) удовлетворяющих условию</h1>
+        <h1>Нахождение обратного числа</h1>
         <h2>Тренажёр</h2>
         {this.state.input ? 
           <div>
-            <p>{this.state.input[0]}x + {this.state.input[1]}y = 1</p>
+            <p>Найти обратный элемент к {this.state.input[0]} в поле вычетов по модулю {this.state.input[1]} заполнив нужную часть таблицы расширенного алгоритма Евклид.Классы вычетов определяется остатком по модулю {this.state.input[1]}</p>
             <Table data={this.state.table.map(row => row.map(col => 
               col !== '' ? (
                 <div className="input-number-wrap">
@@ -56,18 +56,15 @@ export default class axbyTrainer extends Component {
               ) : null
             ))}/>
             <code className="answer-area">
-              Ответ: X = &nbsp;
+              Ответ: &nbsp;
               <div className="input-number-wrap">
-                <input type="number" data-original={this.state.output[0]} onBlur={e => this.check(e)}/>
-                <i className="checker"></i>
-              </div>
-              &nbsp;Y = &nbsp;
-              <div className="input-number-wrap">
-                <input type="number" data-original={this.state.output[1]} onBlur={e => this.check(e)}/>
+                <input type="number" data-original={this.state.output} onBlur={e => this.check(e)}/>
                 <i className="checker"></i>
               </div>
             </code>
-            <button onClick={e => this.refreshExample()}>Обновить</button>
+            <div className="button-wrap">
+              <button onClick={e => this.refreshExample()}>Обновить</button>
+            </div>
           </div>
           : null
         }

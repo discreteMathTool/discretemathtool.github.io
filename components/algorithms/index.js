@@ -13,3 +13,7 @@ export FractionTest from './FractionTest'
 export ConvergentsShow from './ConvergentsShow'
 export ConvergentsTrainer from './ConvergentsTrainer'
 export ConvergentsTest from './ConvergentsTest'
+
+export InverseShow from './InverseShow'
+export InverseTrainer from './InverseTrainer'
+export InverseTest from './InverseTest'

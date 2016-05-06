@@ -32,9 +32,11 @@ export default class axbyShow extends Component {
                 <div className="number-wrap">{col}</div>
             ))}/>
             <code>Ответ: ({this.state.output.join('; ')})</code>
-            <button onClick={e => this.refreshExample()}>Обновить</button>
+            <div className="button-wrap">
+              <button onClick={e => this.refreshExample()}>Обновить</button>
+            </div>
           </div>
-          : ''
+          : null
         }
       </div>
     )

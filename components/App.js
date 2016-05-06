@@ -13,7 +13,7 @@ export default function App({ children }) {
           {title: 'ax + by = 1', url: '/axby1'},
           {title: 'Цепная дробь', url: '/fraction'},
           {title: 'Подходящие дроби', url: '/convergents'},
-          {title: 'Обратоное число', url: '/rev'},
+          {title: 'Обратоное число', url: '/inverse'},
           {title: 'Диофантово уравнение ', url: '/diofan'},
           {title: 'Деление многочлена на бином', url: '/div'},
         ]}/>
