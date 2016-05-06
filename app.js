@@ -9,6 +9,7 @@ import { Router, Route, IndexRoute, browserHistory } from 'react-router'
 
 import { App, Home, About } from './components'
 import { GCDShow, GCDTrainer, GCDTest } from './components/algorithms'
+import { axbyShow, axbyTrainer, axbyTest } from './components/algorithms'
 
 const DevTools = createDevTools(
   <DockMonitor toggleVisibilityKey="ctrl-h" changePositionKey="ctrl-q">
@@ -24,6 +25,9 @@ ReactDOM.render(
       <Route path="gcd/show" component={GCDShow}/>
       <Route path="gcd/trainer" component={GCDTrainer}/>
       <Route path="gcd/test" component={GCDTest}/>
+      <Route path="axby1/show" component={axbyShow}/>
+      <Route path="axby1/trainer" component={axbyTrainer}/>
+      <Route path="axby1/test" component={axbyTest}/>
     </Route>
   </Router>,
   document.getElementById('mount')

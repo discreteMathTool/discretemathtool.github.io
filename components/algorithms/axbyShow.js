@@ -1,0 +1,42 @@
+import React, { Component } from 'react'
+import Table from '../Table'
+
+export default class axbyShow extends Component {
+
+  constructor (props) {
+    super(props)
+    this.refreshExample()
+  }
+
+  state = {}
+
+  refreshExample () {
+    fetch('http://bastards.noip.me:8888/solve/axby1')
+      .then(response => response.json())
+      .then(example => {
+        this.setState(example)
+      })
+      .catch(console.error)
+  }
+
+  render () {
+    return (
+      <div>
+        {this.state.input ? 
+          <div>
+            <h1>Найти (x,y) удовлетворяющих условию</h1>
+            <h2>Демонстрация</h2>
+            <p>{this.state.input[0]}x + {this.state.input[1]}y = 1</p>
+            <p>Для решения этой задачи нам необходимо воспользоваться расширенным алгоритмом Евклида, как показано в следующей таблице.</p>
+            <Table data={this.state.table.map(row => row.map(col => 
+                <div className="number-wrap">{col}</div>
+            ))}/>
+            <code>Ответ: ({this.state.output.join(';')})</code>
+            <button onClick={e => this.refreshExample()}>Обновить</button>
+          </div>
+          : ''
+        }
+      </div>
+    )
+  }
+}

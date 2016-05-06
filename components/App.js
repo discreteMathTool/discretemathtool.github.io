@@ -10,7 +10,7 @@ export default function App({ children }) {
       <div className="container">
         <MainNavigation items={[
           {title: 'НОД', url: '/gcd'},
-          {title: 'ax + by = 1', url: '/foo'},
+          {title: 'ax + by = 1', url: '/axby1'},
           {title: 'Цепная дробь', url: '/chain'},
           {title: 'Подходящие дроби', url: '/suit'},
           {title: 'Обратоное число', url: '/rev'},
