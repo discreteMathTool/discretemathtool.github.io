@@ -32,7 +32,9 @@ export default class ConvergentsShow extends Component {
             <Table data={this.state.table.map(row => row.map(col => 
                 <div className="number-wrap">{col}</div>
             ))}/>
-            <button onClick={e => this.refreshExample()}>Обновить</button>
+            <div className="button-wrap">
+              <button onClick={e => this.refreshExample()}>Обновить</button>
+            </div>
           </div>
           : null
         }

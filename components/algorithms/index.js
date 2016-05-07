@@ -17,3 +17,7 @@ export ConvergentsTest from './ConvergentsTest'
 export InverseShow from './InverseShow'
 export InverseTrainer from './InverseTrainer'
 export InverseTest from './InverseTest'
+
+export DiophantineShow from './DiophantineShow'
+export DiophantineTrainer from './DiophantineTrainer'
+export DiophantineTest from './DiophantineTest'

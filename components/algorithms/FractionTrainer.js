@@ -56,7 +56,9 @@ export default class FractionTrainer extends Component {
                 </div>
               ) : null
             ))}/>
-            <button onClick={e => this.refreshExample()}>Обновить</button>
+            <div className="button-wrap">
+              <button onClick={e => this.refreshExample()}>Обновить</button>
+            </div>
           </div>
           : null
         }

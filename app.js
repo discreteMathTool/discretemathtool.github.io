@@ -13,6 +13,7 @@ import { axbyShow, axbyTrainer, axbyTest } from './components/algorithms'
 import { FractionShow, FractionTrainer, FractionTest } from './components/algorithms'
 import { ConvergentsShow, ConvergentsTrainer, ConvergentsTest } from './components/algorithms'
 import { InverseShow, InverseTrainer, InverseTest } from './components/algorithms'
+import { DiophantineShow, DiophantineTrainer, DiophantineTest } from './components/algorithms'
 
 const DevTools = createDevTools(
   <DockMonitor toggleVisibilityKey="ctrl-h" changePositionKey="ctrl-q">
@@ -39,7 +40,10 @@ ReactDOM.render(
       <Route path="convergents/test" component={ConvergentsTest}/>
       <Route path="inverse/show" component={InverseShow}/>
       <Route path="inverse/trainer" component={InverseTrainer}/>
-      <Route path="inverse/test" component={InverseTest}/>    
+      <Route path="inverse/test" component={InverseTest}/>
+      <Route path="diophantine/show" component={DiophantineShow}/>
+      <Route path="diophantine/trainer" component={DiophantineTrainer}/>
+      <Route path="diophantine/test" component={DiophantineTest}/>
     </Route>
   </Router>,
   document.getElementById('mount')
