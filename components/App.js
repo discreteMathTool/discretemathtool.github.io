@@ -14,7 +14,8 @@ export default function App({ children }) {
           {title: 'Цепная дробь', url: '/fraction'},
           {title: 'Подходящие дроби', url: '/convergents'},
           {title: 'Обратное число', url: '/inverse'},
-          {title: 'Диофантово уравнение ', url: '/diophantine'},
+          {title: 'Диофантово уравнение', url: '/diophantine'},
+          {title: 'Быстрое возведение в степень', url: '/fastDegree'},
           {title: 'Деление многочлена на бином', url: '/div'},
         ]}/>
         <main id="content">{children}</main>

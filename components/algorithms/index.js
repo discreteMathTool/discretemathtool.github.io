@@ -21,3 +21,7 @@ export InverseTest from './InverseTest'
 export DiophantineShow from './DiophantineShow'
 export DiophantineTrainer from './DiophantineTrainer'
 export DiophantineTest from './DiophantineTest'
+
+export FastDegreeShow from './FastDegreeShow'
+export FastDegreeTrainer from './FastDegreeTrainer'
+export FastDegreeTest from './FastDegreeTest'

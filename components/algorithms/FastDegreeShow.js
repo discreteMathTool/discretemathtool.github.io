@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Table from '../Table'
 
-export default class FractionShow extends Component {
+export default class FastDegreeShow extends Component {
 
   constructor (props) {
     super(props)
@@ -11,7 +11,7 @@ export default class FractionShow extends Component {
   state = {}
 
   refreshExample () {
-    fetch('http://bastards.noip.me:8888/solve/fraction')
+    fetch('http://bastards.noip.me:8888/solve/fastDegree')
       .then(response => response.json())
       .then(example => {
         this.setState(example)
@@ -24,13 +24,13 @@ export default class FractionShow extends Component {
       <div>
         {this.state.input ? 
           <div>
-            <h1>Разложение в цепную дробь</h1>
+            <h1>Быстрое возведение в степень</h1>
             <h2>Демонстрация</h2>
-            <p>Дана дробь {this.state.input[0]}/{this.state.input[1]}</p>
-            <p>Возьмем {this.state.input[0]} и {this.state.input[1]} и применим алгоритм Евклида, получим следующую таблицу:</p>
+            <p>Возвести {this.state.input[0]} в {this.state.input[1]}</p>
             <Table data={this.state.table.map(row => row.map(col => 
                 <div className="number-wrap">{col}</div>
             ))}/>
+            <code>Ответ: {this.state.output}</code>
             <div className="button-wrap">
               <button onClick={e => this.refreshExample()}>Обновить</button>
             </div>
