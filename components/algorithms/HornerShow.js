@@ -30,7 +30,7 @@ export default class HornerShow extends Component {
     return (
       <div>
         {this.state.input ? 
-          <div>
+          <div className="content-wrap">
             <h1>Схема Горнера</h1>
             <h2>Демонстрация</h2>
             <p>Поделим многочлен {this.polynomial(this.state.input[0])} на бином (x-{this.state.input[1]})</p>

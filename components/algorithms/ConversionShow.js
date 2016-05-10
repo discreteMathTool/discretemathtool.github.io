@@ -23,7 +23,7 @@ export default class ConversionShow extends Component {
     return (
       <div>
         {this.state.input ? 
-          <div>
+          <div className="content-wrap">
             <h1>Перевод из одной системы счисления в другую</h1>
             <h2>Демонстрация</h2>
             <p>Певевести {this.state.input[0]} из системы счисления {this.state.input[1]} в {this.state.input[2]}</p>

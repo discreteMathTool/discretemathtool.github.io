@@ -51,7 +51,7 @@ export default class axbyTest extends Component {
 
   render () {
     return (
-      <div>
+      <div className="content-wrap">
         <h1>Найти (x,y) удовлетворяющих условию</h1>
         <h2>Контроль</h2>
         {this.state.input ? 

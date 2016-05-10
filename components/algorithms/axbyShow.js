@@ -23,7 +23,7 @@ export default class axbyShow extends Component {
     return (
       <div>
         {this.state.input ? 
-          <div>
+          <div className="content-wrap">
             <h1>Найти (x,y) удовлетворяющих условию</h1>
             <h2>Демонстрация</h2>
             <p>{this.state.input[0]}x + {this.state.input[1]}y = 1</p>

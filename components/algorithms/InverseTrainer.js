@@ -41,7 +41,7 @@ export default class InverseTrainer extends Component {
 
   render () {
     return (
-      <div>
+      <div className="content-wrap">
         <h1>Нахождение обратного числа</h1>
         <h2>Тренажёр</h2>
         {this.state.input ? 

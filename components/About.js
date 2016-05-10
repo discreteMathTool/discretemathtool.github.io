@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function About () {
   return (
-    <div>
+    <div className="content-wrap">
       <h2>Цель проекта</h2>
       <p>Создание сайта-сервиса, который помогал бы преподавателям отслеживать выполненую работу студентов в режиме online.</p>
       <h2>Задачи проекта</h2>

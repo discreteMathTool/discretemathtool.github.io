@@ -51,7 +51,7 @@ export default class FractionTest extends Component {
 
   render () {
     return (
-      <div>
+      <div className="content-wrap">
         <h1>Разложение в цепную дробь</h1>
         <h2>Контроль</h2>
         {this.state.input ? 

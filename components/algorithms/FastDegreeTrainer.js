@@ -41,7 +41,7 @@ export default class FastDegreeTrainer extends Component {
 
   render () {
     return (
-      <div>
+      <div className="content-wrap">
         <h1>Быстрое возведение в степень</h1>
         <h2>Тренажёр</h2>
         {this.state.input ? 

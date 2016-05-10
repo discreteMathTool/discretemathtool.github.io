@@ -50,7 +50,7 @@ export default class FastDegreeTest extends Component {
 
   render () {
     return (
-      <div>
+      <div className="content-wrap">
         <h1>Быстрое возведение в степень</h1>
         <h2>Контроль</h2>
         {this.state.input ? 

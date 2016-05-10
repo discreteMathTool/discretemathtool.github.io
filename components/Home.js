@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Home () {
   return (
-    <div>
+    <div className="content-wrap">
       <h1>Добро пожаловать!</h1>
       <h2>Небольшая инструкция</h2>
       <p>Для демонстрации решения алоритмов доступны все ссылки из меню. Тестирование и контроль проходятся для следующих алгоритмов: </p>

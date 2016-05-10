@@ -51,7 +51,7 @@ export default class GCDTest extends Component {
   render () {
     console.dir(this.state)
     return (
-      <div>
+      <div className="content-wrap">
         <h1>Наибольший общий делитель</h1>
         <h2>Контроль</h2>
         {this.state.input ? 

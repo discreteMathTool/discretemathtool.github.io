@@ -23,7 +23,7 @@ export default class FastDegreeShow extends Component {
     return (
       <div>
         {this.state.input ? 
-          <div>
+          <div className="content-wrap">
             <h1>Быстрое возведение в степень</h1>
             <h2>Демонстрация</h2>
             <p>Возвести {this.state.input[0]} в {this.state.input[1]}</p>

@@ -56,7 +56,7 @@ export default class HornerTest extends Component {
 
   render () {
     return (
-      <div>
+      <div className="content-wrap">
         <h1>Схема Горнера</h1>
         <h2>Контроль</h2>
         {this.state.input ? 

@@ -23,7 +23,7 @@ export default class FractionShow extends Component {
     return (
       <div>
         {this.state.input ? 
-          <div>
+          <div className="content-wrap">
             <h1>Разложение в цепную дробь</h1>
             <h2>Демонстрация</h2>
             <p>Дана дробь {this.state.input[0]}/{this.state.input[1]}</p>
