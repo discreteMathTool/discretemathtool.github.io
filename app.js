@@ -15,6 +15,7 @@ import { ConvergentsShow, ConvergentsTrainer, ConvergentsTest } from './componen
 import { InverseShow, InverseTrainer, InverseTest } from './components/algorithms'
 import { DiophantineShow, DiophantineTrainer, DiophantineTest } from './components/algorithms'
 import { FastDegreeShow, FastDegreeTrainer, FastDegreeTest } from './components/algorithms'
+import { ConversionShow, ConversionTrainer, ConversionTest } from './components/algorithms'
 
 const DevTools = createDevTools(
   <DockMonitor toggleVisibilityKey="ctrl-h" changePositionKey="ctrl-q">
@@ -48,6 +49,9 @@ ReactDOM.render(
       <Route path="fastDegree/show" component={FastDegreeShow}/>
       <Route path="fastDegree/trainer" component={FastDegreeTrainer}/>
       <Route path="fastDegree/test" component={FastDegreeTest}/>
+      <Route path="conversion/show" component={ConversionShow}/>
+      <Route path="conversion/trainer" component={ConversionTrainer}/>
+      <Route path="conversion/test" component={ConversionTest}/>
     </Route>
   </Router>,
   document.getElementById('mount')

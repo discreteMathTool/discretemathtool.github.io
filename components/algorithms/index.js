@@ -25,3 +25,7 @@ export DiophantineTest from './DiophantineTest'
 export FastDegreeShow from './FastDegreeShow'
 export FastDegreeTrainer from './FastDegreeTrainer'
 export FastDegreeTest from './FastDegreeTest'
+
+export ConversionShow from './ConversionShow'
+export ConversionTrainer from './ConversionTrainer'
+export ConversionTest from './ConversionTest'
