@@ -148,6 +148,7 @@ body {
 
 #content .table-wrap {
     max-width: 660px;
+    overflow-x: auto;
 }
 
 #content table {
