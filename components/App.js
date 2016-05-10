@@ -17,7 +17,7 @@ export default function App({ children }) {
           {title: 'Диофантово уравнение', url: '/diophantine'},
           {title: 'Быстрое возведение в степень', url: '/fastDegree'},
           {title: 'Перевод из одной системы счисления в другую', url: '/conversion'},
-          {title: 'Деление многочлена на бином', url: '/div'},
+          {title: 'Схема Горнера', url: '/horner'},
         ]}/>
         <main id="content">{children}</main>
       </div>

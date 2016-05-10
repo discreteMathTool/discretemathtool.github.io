@@ -29,3 +29,7 @@ export FastDegreeTest from './FastDegreeTest'
 export ConversionShow from './ConversionShow'
 export ConversionTrainer from './ConversionTrainer'
 export ConversionTest from './ConversionTest'
+
+export HornerShow from './HornerShow'
+export HornerTrainer from './HornerTrainer'
+export HornerTest from './HornerTest'
