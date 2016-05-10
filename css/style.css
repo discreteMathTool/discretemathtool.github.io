@@ -155,6 +155,7 @@ body {
 #content table input[type="number"] {
     border: none;
     outline: none;
+    background-color: #fff;
 }
 #content table .input-number-wrap {
     display: flex;

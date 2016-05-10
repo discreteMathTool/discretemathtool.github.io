@@ -59,7 +59,7 @@ export default class axbyTest extends Component {
             <p>{this.state.input[0]}x + {this.state.input[1]}y = 1</p>
             <div className="table">
               <Table data={this.state.table.map((row, i) => row.map((col, j) => {
-                return i == 1 && j < 2 ? '' : <input type="number"/>
+                return i == 1 && j < 2 ? <input type="number" disabled={true}/> : <input type="number"/>
               }))}/>
             </div>
             <code className="answer-area">

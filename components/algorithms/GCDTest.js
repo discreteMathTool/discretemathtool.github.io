@@ -61,7 +61,7 @@ export default class GCDTest extends Component {
             <p>Вводите полученные значения в следующую таблицу:</p>
             <div className="table">
               <Table data={this.state.table.map((row, i) => row.map((col, j) => {
-                return i > 0 && j < 2 ? '' : <input type="number"/>
+                return i > 0 && j < 2 ? <input type="number" disabled={true}/> : <input type="number"/>
               }))}/>
             </div>
             <code className="answer-area">
