@@ -12,7 +12,7 @@ export default class GCDTest extends Component {
   state = {}
 
   refreshExample () {
-    fetch('http://bastards.noip.me:8888/test/nod')
+    fetch('https://bastards.noip.me:8888/test/nod')
       .then(response => response.json())
       .then(example => {
         let inputs = ReactDOM.findDOMNode(this).querySelectorAll('input[type="number"]'); // Fuck JavaScript
@@ -29,7 +29,7 @@ export default class GCDTest extends Component {
         return input.value !== '' ? parseInt(input.value) : ''
       })
     })
-    fetch('http://bastards.noip.me:8888/test/nod/', {
+    fetch('https://bastards.noip.me:8888/test/nod/', {
       method  : 'post',
       body    : JSON.stringify({
         input  : this.state.input,

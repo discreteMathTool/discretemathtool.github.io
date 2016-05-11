@@ -12,7 +12,7 @@ export default class axbyTest extends Component {
   state = {}
 
   refreshExample () {
-    fetch('http://bastards.noip.me:8888/test/axby1')
+    fetch('https://bastards.noip.me:8888/test/axby1')
       .then(response => response.json())
       .then(example => {
         let inputs = ReactDOM.findDOMNode(this).querySelectorAll('input[type="number"]'); // Fuck JavaScript
@@ -30,7 +30,7 @@ export default class axbyTest extends Component {
       })
     })
     let output = [parseInt(this.refs.X.value), parseInt(this.refs.Y.value)]
-    fetch('http://bastards.noip.me:8888/test/axby1/', {
+    fetch('https://bastards.noip.me:8888/test/axby1/', {
       method  : 'post',
       headers : new Headers({
         'Content-Type': 'application/json'

@@ -11,7 +11,7 @@ export default class InverseShow extends Component {
   state = {}
 
   refreshExample () {
-    fetch('http://bastards.noip.me:8888/solve/inverse')
+    fetch('https://bastards.noip.me:8888/solve/inverse')
       .then(response => response.json())
       .then(example => {
         this.setState(example)

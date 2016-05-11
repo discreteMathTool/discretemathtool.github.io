@@ -12,7 +12,7 @@ export default class FractionTrainer extends Component {
   state = {}
 
   refreshExample () {
-    fetch('http://bastards.noip.me:8888/solve/fraction')
+    fetch('https://bastards.noip.me:8888/solve/fraction')
       .then(response => response.json())
       .then(example => {
         let inputs = ReactDOM.findDOMNode(this).querySelectorAll('input[type="number"]'); // Fuck JavaScript

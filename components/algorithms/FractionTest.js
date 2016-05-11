@@ -12,7 +12,7 @@ export default class FractionTest extends Component {
   state = {}
 
   refreshExample () {
-    fetch('http://bastards.noip.me:8888/test/fraction')
+    fetch('https://bastards.noip.me:8888/test/fraction')
       .then(response => response.json())
       .then(example => {
         let inputs = ReactDOM.findDOMNode(this).querySelectorAll('input[type="number"]'); // Fuck JavaScript
@@ -30,7 +30,7 @@ export default class FractionTest extends Component {
       })
     })
     let output = table[1].filter(val => val !== '')
-    fetch('http://bastards.noip.me:8888/test/fraction/', {
+    fetch('https://bastards.noip.me:8888/test/fraction/', {
       method  : 'post',
       headers : new Headers({
         'Content-Type': 'application/json'

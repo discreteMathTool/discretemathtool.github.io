@@ -12,7 +12,7 @@ export default class InverseTest extends Component {
   state = {}
 
   refreshExample () {
-    fetch('http://bastards.noip.me:8888/test/inverse')
+    fetch('https://bastards.noip.me:8888/test/inverse')
       .then(response => response.json())
       .then(example => {
         let inputs = ReactDOM.findDOMNode(this).querySelectorAll('input[type="number"]'); // Fuck JavaScript
@@ -29,7 +29,7 @@ export default class InverseTest extends Component {
         return input.value !== '' ? parseInt(input.value) : ''
       })
     })
-    fetch('http://bastards.noip.me:8888/test/inverse/', {
+    fetch('https://bastards.noip.me:8888/test/inverse/', {
       method  : 'post',
       headers : new Headers({
         'Content-Type': 'application/json'

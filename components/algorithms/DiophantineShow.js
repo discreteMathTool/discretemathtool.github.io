@@ -11,7 +11,7 @@ export default class DiophantineShow extends Component {
   state = {}
 
   refreshExample () {
-    fetch('http://bastards.noip.me:8888/solve/diophantine')
+    fetch('https://bastards.noip.me:8888/solve/diophantine')
       .then(response => response.json())
       .then(example => {
         this.setState(example)

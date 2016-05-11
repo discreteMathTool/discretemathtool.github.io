@@ -11,7 +11,7 @@ export default class ConvergentsShow extends Component {
   state = {}
 
   refreshExample () {
-    fetch('http://bastards.noip.me:8888/solve/convergents')
+    fetch('https://bastards.noip.me:8888/solve/convergents')
       .then(response => response.json())
       .then(example => {
         this.setState(example)

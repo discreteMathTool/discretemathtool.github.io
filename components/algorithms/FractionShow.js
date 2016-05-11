@@ -11,7 +11,7 @@ export default class FractionShow extends Component {
   state = {}
 
   refreshExample () {
-    fetch('http://bastards.noip.me:8888/solve/fraction')
+    fetch('https://bastards.noip.me:8888/solve/fraction')
       .then(response => response.json())
       .then(example => {
         this.setState(example)

@@ -12,7 +12,7 @@ export default class FastDegreeTest extends Component {
   state = {}
 
   refreshExample () {
-    fetch('http://bastards.noip.me:8888/test/fastDegree')
+    fetch('https://bastards.noip.me:8888/test/fastDegree')
       .then(response => response.json())
       .then(example => {
         let inputs = ReactDOM.findDOMNode(this).querySelectorAll('input[type="number"]'); // Fuck JavaScript
@@ -29,7 +29,7 @@ export default class FastDegreeTest extends Component {
         return input.value !== '' ? parseInt(input.value) : ''
       })
     })
-    fetch('http://bastards.noip.me:8888/test/fastDegree/', {
+    fetch('https://bastards.noip.me:8888/test/fastDegree/', {
       method  : 'post',
       headers : new Headers({
         'Content-Type': 'application/json'

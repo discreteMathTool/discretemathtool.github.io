@@ -12,7 +12,7 @@ export default class HornerTrainer extends Component {
   state = {}
 
   refreshExample () {
-    fetch('http://bastards.noip.me:8888/solve/horner')
+    fetch('https://bastards.noip.me:8888/solve/horner')
       .then(response => response.json())
       .then(example => {
         let inputs = ReactDOM.findDOMNode(this).querySelectorAll('input[type="number"]'); // Fuck JavaScript

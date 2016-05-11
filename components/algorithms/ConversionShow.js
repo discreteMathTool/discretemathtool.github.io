@@ -11,7 +11,7 @@ export default class ConversionShow extends Component {
   state = {}
 
   refreshExample () {
-    fetch('http://bastards.noip.me:8888/solve/conversion')
+    fetch('https://bastards.noip.me:8888/solve/conversion')
       .then(response => response.json())
       .then(example => {
         this.setState(example)

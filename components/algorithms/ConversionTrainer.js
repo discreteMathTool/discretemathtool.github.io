@@ -12,7 +12,7 @@ export default class ConversionTrainer extends Component {
   state = {}
 
   refreshExample () {
-    fetch('http://bastards.noip.me:8888/solve/conversion')
+    fetch('https://bastards.noip.me:8888/solve/conversion')
       .then(response => response.json())
       .then(example => {
         let inputs = ReactDOM.findDOMNode(this).querySelectorAll('input[type="number"]'); // Fuck JavaScript

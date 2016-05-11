@@ -12,7 +12,7 @@ export default class ConvergentsTrainer extends Component {
   state = {}
 
   refreshExample () {
-    fetch('http://bastards.noip.me:8888/solve/convergents')
+    fetch('https://bastards.noip.me:8888/solve/convergents')
       .then(response => response.json())
       .then(example => {
         let inputs = ReactDOM.findDOMNode(this).querySelectorAll('input[type="number"]'); // Fuck JavaScript
