@@ -1,12 +1,19 @@
 /* eslint-disable */
 const path = require('path');
+const WriteFilePlugin = require('write-file-webpack-plugin');
 
 module.exports = {
   entry: './app.js',
+  devServer: {
+    outputPath: path.join(__dirname, './dist'),
+  },
   output: {
-    path: path.join(__dirname, 'dist'),
+    path: path.join(__dirname, './dist'),
     filename: 'bundle.js'
   },
+  plugins: [
+    new WriteFilePlugin()
+  ],
   module: {
     loaders: [{
       test: /\.js$/,
