@@ -41,9 +41,14 @@ export default class HornerTrainer extends Component {
 
   polynomial (factors) {
     return factors.map((c, i) => {
-      return i < factors.length - 1 ? // Будет ли при коэфиценте стоять x
-        c + 'x^' + (factors.length - i) : c
-    }).join('+')
+      let power = factors.length - i - 1
+      return c != 0 ? (
+        <span>
+          {c < 0 ? '-' : i > 0 ? '+' : ''}
+          {Math.abs(c) !== 1 || power === 0 ? Math.abs(c) : ''}
+          {power > 1 ? <span>x<sup>{power}</sup></span> : power == 1 ? 'x' : ''}
+        </span>) : ''
+    })
   }
 
   render () {
@@ -53,7 +58,7 @@ export default class HornerTrainer extends Component {
         <h2>Тренажёр</h2>
         {this.state.input ? 
           <div>
-            <p>Поделим многочлен {this.polynomial(this.state.input[0])} на бином (x-{this.state.input[1]})</p>
+            <p>Поделим многочлен {this.polynomial(this.state.input[0])} на бином ({this.polynomial([1, this.state.input[1]])})</p>
             <Table data={this.state.table.map(row => row.map(col => 
               col !== '' ? (
                 <div className="input-number-wrap">

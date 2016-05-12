@@ -43068,9 +43068,24 @@
 	    key: 'polynomial',
 	    value: function polynomial(factors) {
 	      return factors.map(function (c, i) {
-	        return i < factors.length - 1 ? // Будет ли при коэфиценте стоять x
-	        c + 'x^' + (factors.length - i) : c;
-	      }).join('+');
+	        var power = factors.length - i - 1;
+	        return c != 0 ? _react2.default.createElement(
+	          'span',
+	          null,
+	          c < 0 ? '-' : i > 0 ? '+' : '',
+	          Math.abs(c) !== 1 || power === 0 ? Math.abs(c) : '',
+	          power > 1 ? _react2.default.createElement(
+	            'span',
+	            null,
+	            'x',
+	            _react2.default.createElement(
+	              'sup',
+	              null,
+	              power
+	            )
+	          ) : power == 1 ? 'x' : ''
+	        ) : '';
+	      });
 	    }
 	  }, {
 	    key: 'render',
@@ -43098,8 +43113,8 @@
 	            null,
 	            'Поделим многочлен ',
 	            this.polynomial(this.state.input[0]),
-	            ' на бином (x-',
-	            this.state.input[1],
+	            ' на бином (',
+	            this.polynomial([1, this.state.input[1]]),
 	            ')'
 	          ),
 	          _react2.default.createElement(_Table2.default, { data: this.state.table.map(function (row) {
@@ -43114,11 +43129,12 @@
 	          _react2.default.createElement(
 	            'code',
 	            null,
-	            'Ответ: (x-',
-	            this.state.input[1],
+	            'Ответ: (',
+	            this.polynomial([1, this.state.input[1]]),
 	            ')(',
 	            this.polynomial(this.state.table[1].slice(1, -1)),
-	            ') +',
+	            ')',
+	            this.state.table[1].slice(-1).pop() > 0 ? '+' : '',
 	            this.state.table[1].slice(-1).pop()
 	          ),
 	          _react2.default.createElement(
@@ -43222,9 +43238,24 @@
 	    key: 'polynomial',
 	    value: function polynomial(factors) {
 	      return factors.map(function (c, i) {
-	        return i < factors.length - 1 ? // Будет ли при коэфиценте стоять x
-	        c + 'x^' + (factors.length - i) : c;
-	      }).join('+');
+	        var power = factors.length - i - 1;
+	        return c != 0 ? _react2.default.createElement(
+	          'span',
+	          null,
+	          c < 0 ? '-' : i > 0 ? '+' : '',
+	          Math.abs(c) !== 1 || power === 0 ? Math.abs(c) : '',
+	          power > 1 ? _react2.default.createElement(
+	            'span',
+	            null,
+	            'x',
+	            _react2.default.createElement(
+	              'sup',
+	              null,
+	              power
+	            )
+	          ) : power == 1 ? 'x' : ''
+	        ) : '';
+	      });
 	    }
 	  }, {
 	    key: 'render',
@@ -43252,8 +43283,8 @@
 	            null,
 	            'Поделим многочлен ',
 	            this.polynomial(this.state.input[0]),
-	            ' на бином (x-',
-	            this.state.input[1],
+	            ' на бином (',
+	            this.polynomial([1, this.state.input[1]]),
 	            ')'
 	          ),
 	          _react2.default.createElement(_Table2.default, { data: this.state.table.map(function (row) {
@@ -43384,9 +43415,24 @@
 	    key: 'polynomial',
 	    value: function polynomial(factors) {
 	      return factors.map(function (c, i) {
-	        return i < factors.length - 1 ? // Будет ли при коэфиценте стоять x
-	        c + 'x^' + (factors.length - i) : c;
-	      }).join('+');
+	        var power = factors.length - i - 1;
+	        return c != 0 ? _react2.default.createElement(
+	          'span',
+	          null,
+	          c < 0 ? '-' : i > 0 ? '+' : '',
+	          Math.abs(c) !== 1 || power === 0 ? Math.abs(c) : '',
+	          power > 1 ? _react2.default.createElement(
+	            'span',
+	            null,
+	            'x',
+	            _react2.default.createElement(
+	              'sup',
+	              null,
+	              power
+	            )
+	          ) : power == 1 ? 'x' : ''
+	        ) : '';
+	      });
 	    }
 	  }, {
 	    key: 'render',
@@ -43414,8 +43460,8 @@
 	            null,
 	            'Поделим многочлен ',
 	            this.polynomial(this.state.input[0]),
-	            ' на бином (x-',
-	            this.state.input[1],
+	            ' на бином (',
+	            this.polynomial([1, this.state.input[1]]),
 	            ')'
 	          ),
 	          _react2.default.createElement(
