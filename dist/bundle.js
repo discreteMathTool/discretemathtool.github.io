@@ -42653,9 +42653,12 @@
 	            null,
 	            'Певевести ',
 	            this.state.input[0],
-	            ' из системы счисления ',
-	            this.state.input[1],
-	            ' в ',
+	            _react2.default.createElement(
+	              'sub',
+	              null,
+	              this.state.input[1]
+	            ),
+	            ' в систему счисления с основанием ',
 	            this.state.input[2]
 	          ),
 	          _react2.default.createElement(_Table2.default, { data: this.state.table.map(function (row) {
@@ -42671,7 +42674,12 @@
 	            'code',
 	            null,
 	            'Ответ: ',
-	            this.state.output
+	            this.state.output,
+	            _react2.default.createElement(
+	              'sub',
+	              null,
+	              this.state.input[2]
+	            )
 	          ),
 	          _react2.default.createElement(
 	            'div',
@@ -42796,9 +42804,12 @@
 	            null,
 	            'Певевести ',
 	            this.state.input[0],
-	            ' из системы счисления ',
-	            this.state.input[1],
-	            ' в ',
+	            _react2.default.createElement(
+	              'sub',
+	              null,
+	              this.state.input[1]
+	            ),
+	            ' в систему счисления с основанием ',
 	            this.state.input[2]
 	          ),
 	          _react2.default.createElement(_Table2.default, { data: this.state.table.map(function (row) {
@@ -42965,9 +42976,12 @@
 	            null,
 	            'Певевести ',
 	            this.state.input[0],
-	            ' из системы счисления ',
-	            this.state.input[1],
-	            ' в ',
+	            _react2.default.createElement(
+	              'sub',
+	              null,
+	              this.state.input[1]
+	            ),
+	            ' в систему счисления с основанием ',
 	            this.state.input[2]
 	          ),
 	          _react2.default.createElement(

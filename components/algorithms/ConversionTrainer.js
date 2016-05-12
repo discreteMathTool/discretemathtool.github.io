@@ -46,7 +46,7 @@ export default class ConversionTrainer extends Component {
         <h2>Тренажёр</h2>
         {this.state.input ? 
           <div>
-            <p>Певевести {this.state.input[0]} из системы счисления {this.state.input[1]} в {this.state.input[2]}</p>
+            <p>Певевести {this.state.input[0]}<sub>{this.state.input[1]}</sub> в систему счисления с основанием {this.state.input[2]}</p>
             <Table data={this.state.table.map(row => row.map(col => 
               col !== '' ? (
                 <div className="input-number-wrap">
