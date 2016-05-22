@@ -35,8 +35,9 @@ export default class ConvergentsTest extends Component {
         'Content-Type': 'application/json'
       }),
       body    : JSON.stringify({
-        input  : this.state.input,
-        table  : table,
+        input   : this.state.input,
+        table   : table,
+        test_id : this.state.test_id,
       }),
     })
       .then(response => response.json())

@@ -36,9 +36,10 @@ export default class axbyTest extends Component {
         'Content-Type': 'application/json'
       }),
       body    : JSON.stringify({
-        input  : this.state.input,
-        table  : table,
-        output : output,
+        input   : this.state.input,
+        table   : table,
+        output  : output,
+        test_id : this.state.test_id,
       }),
     })
       .then(response => response.json())

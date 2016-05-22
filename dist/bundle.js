@@ -39611,7 +39611,8 @@
 	        body: JSON.stringify({
 	          input: this.state.input,
 	          table: table,
-	          output: parseInt(this.refs.output.value)
+	          output: parseInt(this.refs.output.value),
+	          test_id: this.state.test_id
 	        }),
 	        headers: new Headers({
 	          'Content-Type': 'application/json'
@@ -39629,7 +39630,6 @@
 	    value: function render() {
 	      var _this4 = this;
 
-	      console.dir(this.state);
 	      return _react2.default.createElement(
 	        'div',
 	        { className: 'content-wrap' },
@@ -40069,7 +40069,8 @@
 	        body: JSON.stringify({
 	          input: this.state.input,
 	          table: table,
-	          output: output
+	          output: output,
+	          test_id: this.state.test_id
 	        })
 	      }).then(function (response) {
 	        return response.json();
@@ -40508,7 +40509,8 @@
 	        body: JSON.stringify({
 	          input: this.state.input,
 	          table: table,
-	          output: output
+	          output: output,
+	          test_id: this.state.test_id
 	        })
 	      }).then(function (response) {
 	        return response.json();
@@ -40923,7 +40925,8 @@
 	        }),
 	        body: JSON.stringify({
 	          input: this.state.input,
-	          table: table
+	          table: table,
+	          test_id: this.state.test_id
 	        })
 	      }).then(function (response) {
 	        return response.json();
@@ -41376,7 +41379,8 @@
 	        body: JSON.stringify({
 	          input: this.state.input,
 	          table: table,
-	          output: this.refs.output.value
+	          output: this.refs.output.value,
+	          test_id: this.state.test_id
 	        })
 	      }).then(function (response) {
 	        return response.json();
@@ -42000,7 +42004,8 @@
 	        }),
 	        body: JSON.stringify({
 	          input: this.state.input,
-	          output: output
+	          output: output,
+	          test_id: this.state.test_id
 	        })
 	      }).then(function (response) {
 	        return response.json();
@@ -42484,7 +42489,8 @@
 	        body: JSON.stringify({
 	          input: this.state.input,
 	          table: table,
-	          output: parseInt(this.refs.output.value)
+	          output: parseInt(this.refs.output.value),
+	          test_id: this.state.test_id
 	        })
 	      }).then(function (response) {
 	        return response.json();
@@ -42930,7 +42936,8 @@
 	        body: JSON.stringify({
 	          input: this.state.input,
 	          table: table,
-	          output: parseInt(this.refs.output.value)
+	          output: parseInt(this.refs.output.value),
+	          test_id: this.state.test_id
 	        })
 	      }).then(function (response) {
 	        return response.json();
@@ -43405,7 +43412,8 @@
 	        }),
 	        body: JSON.stringify({
 	          input: this.state.input,
-	          table: table
+	          table: table,
+	          test_id: this.state.test_id
 	        })
 	      }).then(function (response) {
 	        return response.json();

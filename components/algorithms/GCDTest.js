@@ -32,9 +32,10 @@ export default class GCDTest extends Component {
     fetch('http://88.201.187.23:8888/test/nod/', {
       method  : 'post',
       body    : JSON.stringify({
-        input  : this.state.input,
-        table  : table,
-        output : parseInt(this.refs.output.value),
+        input   : this.state.input,
+        table   : table,
+        output  : parseInt(this.refs.output.value),
+        test_id : this.state.test_id,
       }),
       headers : new Headers({
         'Content-Type': 'application/json'
@@ -49,7 +50,6 @@ export default class GCDTest extends Component {
   }
 
   render () {
-    console.dir(this.state)
     return (
       <div className="content-wrap">
         <h1>Наибольший общий делитель</h1>

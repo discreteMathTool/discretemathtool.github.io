@@ -37,8 +37,9 @@ export default class DiophantineTest extends Component {
         'Content-Type': 'application/json'
       }),
       body    : JSON.stringify({
-        input  : this.state.input,
-        output : output,
+        input   : this.state.input,
+        output  : output,
+        test_id : this.state.test_id,
       }),
     })
       .then(response => response.json())
