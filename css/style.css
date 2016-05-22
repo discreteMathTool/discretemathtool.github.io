@@ -18,7 +18,7 @@ body {
 
 #header .menu {
     display: block;
-    width: 960px;
+    width: 1160px;
     height: 100%;
     margin-left: auto;
     margin-right: auto;
@@ -54,7 +54,7 @@ body {
 }
 
 .container {
-    width: 960px;
+    width: 1160px;
     margin: 40px auto;
 }
 .container:after {
@@ -104,8 +104,8 @@ body {
 
 #content {
     float: right;
-    width: 700px;
-    padding-left: 60px;
+    width: 900px;
+    padding-left: 20px;
 }
 
 #content .content-wrap > :first-child {
@@ -147,7 +147,7 @@ body {
 }
 
 #content .table-wrap {
-    max-width: 660px;
+    max-width: 880px;
     overflow-x: auto;
 }
 
@@ -192,8 +192,8 @@ body {
 }
 
 #content input[type="number"] {
-    width: 70px;
-    padding: 10px;
+    width: 50px;
+    padding: 10px 6px;
     outline: none;
     -moz-appearance: textfield;
 }
@@ -203,9 +203,9 @@ body {
 }
 .checker {
     display: inline-block;
-    width: 15px;
-    height: 15px;
-    margin-right: 10px;
+    width: 10px;
+    height: 10px;
+    margin-right: 6px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
