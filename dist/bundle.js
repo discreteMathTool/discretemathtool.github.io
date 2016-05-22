@@ -39425,7 +39425,7 @@
 	    value: function refreshExample() {
 	      var _this2 = this;
 
-	      fetch('https://bastards.noip.me:8888/solve/nod').then(function (response) {
+	      fetch('http://88.201.187.23:8888/solve/nod').then(function (response) {
 	        return response.json();
 	      }).then(function (example) {
 	        var inputs = _reactDom2.default.findDOMNode(_this2).querySelectorAll('input[type="number"]'); // Fuck JavaScript
@@ -39585,7 +39585,7 @@
 	    value: function refreshExample() {
 	      var _this2 = this;
 
-	      fetch('https://bastards.noip.me:8888/test/nod').then(function (response) {
+	      fetch('http://88.201.187.23:8888/test/nod').then(function (response) {
 	        return response.json();
 	      }).then(function (example) {
 	        var inputs = _reactDom2.default.findDOMNode(_this2).querySelectorAll('input[type="number"]'); // Fuck JavaScript
@@ -39606,7 +39606,7 @@
 	          return input.value !== '' ? parseInt(input.value) : '';
 	        });
 	      });
-	      fetch('https://bastards.noip.me:8888/test/nod/', {
+	      fetch('http://88.201.187.23:8888/test/nod/', {
 	        method: 'post',
 	        body: JSON.stringify({
 	          input: this.state.input,
@@ -39753,7 +39753,7 @@
 	    value: function refreshExample() {
 	      var _this2 = this;
 
-	      fetch('https://bastards.noip.me:8888/solve/axby1').then(function (response) {
+	      fetch('http://88.201.187.23:8888/solve/axby1').then(function (response) {
 	        return response.json();
 	      }).then(function (example) {
 	        _this2.setState(example);
@@ -39881,7 +39881,7 @@
 	    value: function refreshExample() {
 	      var _this2 = this;
 
-	      fetch('https://bastards.noip.me:8888/solve/axby1').then(function (response) {
+	      fetch('http://88.201.187.23:8888/solve/axby1').then(function (response) {
 	        return response.json();
 	      }).then(function (example) {
 	        var inputs = _reactDom2.default.findDOMNode(_this2).querySelectorAll('input[type="number"]'); // Fuck JavaScript
@@ -40039,7 +40039,7 @@
 	    value: function refreshExample() {
 	      var _this2 = this;
 
-	      fetch('https://bastards.noip.me:8888/test/axby1').then(function (response) {
+	      fetch('http://88.201.187.23:8888/test/axby1').then(function (response) {
 	        return response.json();
 	      }).then(function (example) {
 	        var inputs = _reactDom2.default.findDOMNode(_this2).querySelectorAll('input[type="number"]'); // Fuck JavaScript
@@ -40061,7 +40061,7 @@
 	        });
 	      });
 	      var output = [parseInt(this.refs.X.value), parseInt(this.refs.Y.value)];
-	      fetch('https://bastards.noip.me:8888/test/axby1/', {
+	      fetch('http://88.201.187.23:8888/test/axby1/', {
 	        method: 'post',
 	        headers: new Headers({
 	          'Content-Type': 'application/json'
@@ -40202,7 +40202,7 @@
 	    value: function refreshExample() {
 	      var _this2 = this;
 
-	      fetch('https://bastards.noip.me:8888/solve/fraction').then(function (response) {
+	      fetch('http://88.201.187.23:8888/solve/fraction').then(function (response) {
 	        return response.json();
 	      }).then(function (example) {
 	        _this2.setState(example);
@@ -40327,7 +40327,7 @@
 	    value: function refreshExample() {
 	      var _this2 = this;
 
-	      fetch('https://bastards.noip.me:8888/solve/fraction').then(function (response) {
+	      fetch('http://88.201.187.23:8888/solve/fraction').then(function (response) {
 	        return response.json();
 	      }).then(function (example) {
 	        var inputs = _reactDom2.default.findDOMNode(_this2).querySelectorAll('input[type="number"]'); // Fuck JavaScript
@@ -40476,7 +40476,7 @@
 	    value: function refreshExample() {
 	      var _this2 = this;
 
-	      fetch('https://bastards.noip.me:8888/test/fraction').then(function (response) {
+	      fetch('http://88.201.187.23:8888/test/fraction').then(function (response) {
 	        return response.json();
 	      }).then(function (example) {
 	        var inputs = _reactDom2.default.findDOMNode(_this2).querySelectorAll('input[type="number"]'); // Fuck JavaScript
@@ -40500,7 +40500,7 @@
 	      var output = table[1].filter(function (val) {
 	        return val !== '';
 	      });
-	      fetch('https://bastards.noip.me:8888/test/fraction/', {
+	      fetch('http://88.201.187.23:8888/test/fraction/', {
 	        method: 'post',
 	        headers: new Headers({
 	          'Content-Type': 'application/json'
@@ -40625,7 +40625,7 @@
 	    value: function refreshExample() {
 	      var _this2 = this;
 
-	      fetch('https://bastards.noip.me:8888/solve/convergents').then(function (response) {
+	      fetch('http://88.201.187.23:8888/solve/convergents').then(function (response) {
 	        return response.json();
 	      }).then(function (example) {
 	        _this2.setState(example);
@@ -40755,7 +40755,7 @@
 	    value: function refreshExample() {
 	      var _this2 = this;
 
-	      fetch('https://bastards.noip.me:8888/solve/convergents').then(function (response) {
+	      fetch('http://88.201.187.23:8888/solve/convergents').then(function (response) {
 	        return response.json();
 	      }).then(function (example) {
 	        var inputs = _reactDom2.default.findDOMNode(_this2).querySelectorAll('input[type="number"]'); // Fuck JavaScript
@@ -40895,7 +40895,7 @@
 	    value: function refreshExample() {
 	      var _this2 = this;
 
-	      fetch('https://bastards.noip.me:8888/test/convergents').then(function (response) {
+	      fetch('http://88.201.187.23:8888/test/convergents').then(function (response) {
 	        return response.json();
 	      }).then(function (example) {
 	        var inputs = _reactDom2.default.findDOMNode(_this2).querySelectorAll('input[type="number"]'); // Fuck JavaScript
@@ -40916,7 +40916,7 @@
 	          return input.value !== '' ? parseInt(input.value) : '';
 	        });
 	      });
-	      fetch('https://bastards.noip.me:8888/test/convergents/', {
+	      fetch('http://88.201.187.23:8888/test/convergents/', {
 	        method: 'post',
 	        headers: new Headers({
 	          'Content-Type': 'application/json'
@@ -41040,7 +41040,7 @@
 	    value: function refreshExample() {
 	      var _this2 = this;
 
-	      fetch('https://bastards.noip.me:8888/solve/inverse').then(function (response) {
+	      fetch('http://88.201.187.23:8888/solve/inverse').then(function (response) {
 	        return response.json();
 	      }).then(function (example) {
 	        _this2.setState(example);
@@ -41192,7 +41192,7 @@
 	    value: function refreshExample() {
 	      var _this2 = this;
 
-	      fetch('https://bastards.noip.me:8888/solve/inverse').then(function (response) {
+	      fetch('http://88.201.187.23:8888/solve/inverse').then(function (response) {
 	        return response.json();
 	      }).then(function (example) {
 	        var inputs = _reactDom2.default.findDOMNode(_this2).querySelectorAll('input[type="number"]'); // Fuck JavaScript
@@ -41347,7 +41347,7 @@
 	    value: function refreshExample() {
 	      var _this2 = this;
 
-	      fetch('https://bastards.noip.me:8888/test/inverse').then(function (response) {
+	      fetch('http://88.201.187.23:8888/test/inverse').then(function (response) {
 	        return response.json();
 	      }).then(function (example) {
 	        var inputs = _reactDom2.default.findDOMNode(_this2).querySelectorAll('input[type="number"]'); // Fuck JavaScript
@@ -41368,7 +41368,7 @@
 	          return input.value !== '' ? parseInt(input.value) : '';
 	        });
 	      });
-	      fetch('https://bastards.noip.me:8888/test/inverse/', {
+	      fetch('http://88.201.187.23:8888/test/inverse/', {
 	        method: 'post',
 	        headers: new Headers({
 	          'Content-Type': 'application/json'
@@ -41505,7 +41505,7 @@
 	    value: function refreshExample() {
 	      var _this2 = this;
 
-	      fetch('https://bastards.noip.me:8888/solve/diophantine').then(function (response) {
+	      fetch('http://88.201.187.23:8888/solve/diophantine').then(function (response) {
 	        return response.json();
 	      }).then(function (example) {
 	        _this2.setState(example);
@@ -41727,7 +41727,7 @@
 	    value: function refreshExample() {
 	      var _this2 = this;
 
-	      fetch('https://bastards.noip.me:8888/solve/diophantine').then(function (response) {
+	      fetch('http://88.201.187.23:8888/solve/diophantine').then(function (response) {
 	        return response.json();
 	      }).then(function (example) {
 	        var inputs = _reactDom2.default.findDOMNode(_this2).querySelectorAll('input[type="number"]'); // Fuck JavaScript
@@ -41970,7 +41970,7 @@
 	    value: function refreshExample() {
 	      var _this2 = this;
 
-	      fetch('https://bastards.noip.me:8888/test/diophantine').then(function (response) {
+	      fetch('http://88.201.187.23:8888/test/diophantine').then(function (response) {
 	        return response.json();
 	      }).then(function (example) {
 	        var inputs = _reactDom2.default.findDOMNode(_this2).querySelectorAll('input[type="number"]'); // Fuck JavaScript
@@ -41993,7 +41993,7 @@
 	        x: [this.refs.x0.value, this.refs.x1.value],
 	        y: [this.refs.y0.value, this.refs.y1.value]
 	      };
-	      fetch('https://bastards.noip.me:8888/test/diophantine/', {
+	      fetch('http://88.201.187.23:8888/test/diophantine/', {
 	        method: 'post',
 	        headers: new Headers({
 	          'Content-Type': 'application/json'
@@ -42180,7 +42180,7 @@
 	    value: function refreshExample() {
 	      var _this2 = this;
 
-	      fetch('https://bastards.noip.me:8888/solve/fastDegree').then(function (response) {
+	      fetch('http://88.201.187.23:8888/solve/fastDegree').then(function (response) {
 	        return response.json();
 	      }).then(function (example) {
 	        _this2.setState(example);
@@ -42302,7 +42302,7 @@
 	    value: function refreshExample() {
 	      var _this2 = this;
 
-	      fetch('https://bastards.noip.me:8888/solve/fastDegree').then(function (response) {
+	      fetch('http://88.201.187.23:8888/solve/fastDegree').then(function (response) {
 	        return response.json();
 	      }).then(function (example) {
 	        var inputs = _reactDom2.default.findDOMNode(_this2).querySelectorAll('input[type="number"]'); // Fuck JavaScript
@@ -42455,7 +42455,7 @@
 	    value: function refreshExample() {
 	      var _this2 = this;
 
-	      fetch('https://bastards.noip.me:8888/test/fastDegree').then(function (response) {
+	      fetch('http://88.201.187.23:8888/test/fastDegree').then(function (response) {
 	        return response.json();
 	      }).then(function (example) {
 	        var inputs = _reactDom2.default.findDOMNode(_this2).querySelectorAll('input[type="number"]'); // Fuck JavaScript
@@ -42476,7 +42476,7 @@
 	          return input.value !== '' ? parseInt(input.value) : '';
 	        });
 	      });
-	      fetch('https://bastards.noip.me:8888/test/fastDegree/', {
+	      fetch('http://88.201.187.23:8888/test/fastDegree/', {
 	        method: 'post',
 	        headers: new Headers({
 	          'Content-Type': 'application/json'
@@ -42611,7 +42611,7 @@
 	    value: function refreshExample() {
 	      var _this2 = this;
 
-	      fetch('https://bastards.noip.me:8888/solve/conversion').then(function (response) {
+	      fetch('http://88.201.187.23:8888/solve/conversion').then(function (response) {
 	        return response.json();
 	      }).then(function (example) {
 	        _this2.setState(example);
@@ -42743,7 +42743,7 @@
 	    value: function refreshExample() {
 	      var _this2 = this;
 
-	      fetch('https://bastards.noip.me:8888/solve/conversion').then(function (response) {
+	      fetch('http://88.201.187.23:8888/solve/conversion').then(function (response) {
 	        return response.json();
 	      }).then(function (example) {
 	        var inputs = _reactDom2.default.findDOMNode(_this2).querySelectorAll('input[type="number"]'); // Fuck JavaScript
@@ -42901,7 +42901,7 @@
 	    value: function refreshExample() {
 	      var _this2 = this;
 
-	      fetch('https://bastards.noip.me:8888/test/conversion').then(function (response) {
+	      fetch('http://88.201.187.23:8888/test/conversion').then(function (response) {
 	        return response.json();
 	      }).then(function (example) {
 	        var inputs = _reactDom2.default.findDOMNode(_this2).querySelectorAll('input[type="number"]'); // Fuck JavaScript
@@ -42922,7 +42922,7 @@
 	          return input.value !== '' ? parseInt(input.value) : '';
 	        });
 	      });
-	      fetch('https://bastards.noip.me:8888/test/conversion', {
+	      fetch('http://88.201.187.23:8888/test/conversion', {
 	        method: 'post',
 	        headers: new Headers({
 	          'Content-Type': 'application/json'
@@ -43062,7 +43062,7 @@
 	    value: function refreshExample() {
 	      var _this2 = this;
 
-	      fetch('https://bastards.noip.me:8888/solve/horner').then(function (response) {
+	      fetch('http://88.201.187.23:8888/solve/horner').then(function (response) {
 	        return response.json();
 	      }).then(function (example) {
 	        _this2.setState(example);
@@ -43213,7 +43213,7 @@
 	    value: function refreshExample() {
 	      var _this2 = this;
 
-	      fetch('https://bastards.noip.me:8888/solve/horner').then(function (response) {
+	      fetch('http://88.201.187.23:8888/solve/horner').then(function (response) {
 	        return response.json();
 	      }).then(function (example) {
 	        var inputs = _reactDom2.default.findDOMNode(_this2).querySelectorAll('input[type="number"]'); // Fuck JavaScript
@@ -43377,7 +43377,7 @@
 	    value: function refreshExample() {
 	      var _this2 = this;
 
-	      fetch('https://bastards.noip.me:8888/test/horner').then(function (response) {
+	      fetch('http://88.201.187.23:8888/test/horner').then(function (response) {
 	        return response.json();
 	      }).then(function (example) {
 	        var inputs = _reactDom2.default.findDOMNode(_this2).querySelectorAll('input[type="number"]'); // Fuck JavaScript
@@ -43398,7 +43398,7 @@
 	          return input.value !== '' ? parseInt(input.value) : '';
 	        });
 	      });
-	      fetch('https://bastards.noip.me:8888/test/horner', {
+	      fetch('http://88.201.187.23:8888/test/horner', {
 	        method: 'post',
 	        headers: new Headers({
 	          'Content-Type': 'application/json'

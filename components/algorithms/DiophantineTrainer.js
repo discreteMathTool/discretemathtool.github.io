@@ -12,7 +12,7 @@ export default class DiophantineTrainer extends Component {
   state = {}
 
   refreshExample () {
-    fetch('https://bastards.noip.me:8888/solve/diophantine')
+    fetch('http://88.201.187.23:8888/solve/diophantine')
       .then(response => response.json())
       .then(example => {
         let inputs = ReactDOM.findDOMNode(this).querySelectorAll('input[type="number"]'); // Fuck JavaScript

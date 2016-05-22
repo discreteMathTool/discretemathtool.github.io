@@ -11,7 +11,7 @@ export default class HornerShow extends Component {
   state = {}
 
   refreshExample () {
-    fetch('https://bastards.noip.me:8888/solve/horner')
+    fetch('http://88.201.187.23:8888/solve/horner')
       .then(response => response.json())
       .then(example => {
         this.setState(example)

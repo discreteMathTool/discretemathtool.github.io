@@ -12,7 +12,7 @@ export default class DiophantineTest extends Component {
   state = {}
 
   refreshExample () {
-    fetch('https://bastards.noip.me:8888/test/diophantine')
+    fetch('http://88.201.187.23:8888/test/diophantine')
       .then(response => response.json())
       .then(example => {
         let inputs = ReactDOM.findDOMNode(this).querySelectorAll('input[type="number"]'); // Fuck JavaScript
@@ -31,7 +31,7 @@ export default class DiophantineTest extends Component {
       x   : [this.refs.x0.value, this.refs.x1.value],
       y   : [this.refs.y0.value, this.refs.y1.value],
     }
-    fetch('https://bastards.noip.me:8888/test/diophantine/', {
+    fetch('http://88.201.187.23:8888/test/diophantine/', {
       method  : 'post',
       headers : new Headers({
         'Content-Type': 'application/json'

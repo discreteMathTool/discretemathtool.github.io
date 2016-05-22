@@ -12,7 +12,7 @@ export default class HornerTest extends Component {
   state = {}
 
   refreshExample () {
-    fetch('https://bastards.noip.me:8888/test/horner')
+    fetch('http://88.201.187.23:8888/test/horner')
       .then(response => response.json())
       .then(example => {
         let inputs = ReactDOM.findDOMNode(this).querySelectorAll('input[type="number"]'); // Fuck JavaScript
@@ -29,7 +29,7 @@ export default class HornerTest extends Component {
         return input.value !== '' ? parseInt(input.value) : ''
       })
     })
-    fetch('https://bastards.noip.me:8888/test/horner', {
+    fetch('http://88.201.187.23:8888/test/horner', {
       method  : 'post',
       headers : new Headers({
         'Content-Type': 'application/json'
