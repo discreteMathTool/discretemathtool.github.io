@@ -7,7 +7,7 @@ import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import { Router, Route, IndexRoute, browserHistory } from 'react-router'
 
-import { App, Home, About } from './components'
+import { App, Home, About, Group } from './components'
 import { GCDShow, GCDTrainer, GCDTest } from './components/algorithms'
 import { axbyShow, axbyTrainer, axbyTest } from './components/algorithms'
 import { FractionShow, FractionTrainer, FractionTest } from './components/algorithms'
@@ -56,6 +56,7 @@ ReactDOM.render(
       <Route path="horner/show" component={HornerShow}/>
       <Route path="horner/trainer" component={HornerTrainer}/>
       <Route path="horner/test" component={HornerTest}/>
+      <Route path="group/:groupID" component={Group}/>
     </Route>
   </Router>,
   document.getElementById('mount')
