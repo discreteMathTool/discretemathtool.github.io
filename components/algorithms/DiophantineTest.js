@@ -58,48 +58,51 @@ export default class DiophantineTest extends Component {
         {this.state.input ? 
           <div>
             <p>Решите уравение: {this.state.input[0]}x + {this.state.input[1]}y = {this.state.input[2]}</p>
-            <p>
+            <div className="answer-area">
               НОД ({this.state.input.join(', ')}) = &nbsp;
-              <div className="input-number-wrap">
+              <div className="input-number-wrap inline">
                 <input type="number" ref="nod"/>
               </div>
-            </p>
-            <p>
+            </div>
+            <div className="answer-area">
               a1 = &nbsp;
-              <div className="input-number-wrap">
+              <div className="input-number-wrap inline">
                 <input type="number" ref="a1"/>
               </div>
               &nbsp;b1 = &nbsp;
-              <div className="input-number-wrap">
+              <div className="input-number-wrap inline">
                 <input type="number" ref="b1"/>
               </div>
               &nbsp;c1 = &nbsp;
-              <div className="input-number-wrap">
+              <div className="input-number-wrap inline">
                 <input type="number" ref="c1"/>
               </div>
-            </p>
+            </div>
             <p>Ответ:</p>
-            <p>
-              X = &nbsp;
-              <div className="input-number-wrap">
-                <input type="number" ref="x0"/>
+            <div>
+              <div className="answer-area">
+                X = &nbsp;
+                <div className="input-number-wrap inline">
+                  <input type="number" ref="x0"/>
+                </div>
+                &nbsp; + &nbsp;
+                <div className="input-number-wrap inline">
+                  <input type="number" ref="x1"/>
+                </div>
+                t
               </div>
-              &nbsp; + &nbsp;
-              <div className="input-number-wrap">
-                <input type="number" ref="x1"/>
-              </div>
-              t
-              <br/>
+              <div className="answer-area">
               Y = &nbsp;
-              <div className="input-number-wrap">
-                <input type="number" ref="y0"/>
+                <div className="input-number-wrap inline">
+                  <input type="number" ref="y0"/>
+                </div>
+                &nbsp; + &nbsp;
+                <div className="input-number-wrap inline">
+                  <input type="number" ref="y1"/>
+                </div>
+                t
               </div>
-              &nbsp; + &nbsp;
-              <div className="input-number-wrap">
-                <input type="number" ref="y1"/>
-              </div>
-              t
-            </p>
+            </div>
             <div className="button-wrap">
               <button onClick={e => this.check(e)}>Проверить</button>
                 {this.state.status !== undefined ?

@@ -42047,36 +42047,36 @@
 	            this.state.input[2]
 	          ),
 	          _react2.default.createElement(
-	            'p',
-	            null,
+	            'div',
+	            { className: 'answer-area' },
 	            'НОД (',
 	            this.state.input.join(', '),
 	            ') =  ',
 	            _react2.default.createElement(
 	              'div',
-	              { className: 'input-number-wrap' },
+	              { className: 'input-number-wrap inline' },
 	              _react2.default.createElement('input', { type: 'number', ref: 'nod' })
 	            )
 	          ),
 	          _react2.default.createElement(
-	            'p',
-	            null,
+	            'div',
+	            { className: 'answer-area' },
 	            'a1 =  ',
 	            _react2.default.createElement(
 	              'div',
-	              { className: 'input-number-wrap' },
+	              { className: 'input-number-wrap inline' },
 	              _react2.default.createElement('input', { type: 'number', ref: 'a1' })
 	            ),
 	            ' b1 =  ',
 	            _react2.default.createElement(
 	              'div',
-	              { className: 'input-number-wrap' },
+	              { className: 'input-number-wrap inline' },
 	              _react2.default.createElement('input', { type: 'number', ref: 'b1' })
 	            ),
 	            ' c1 =  ',
 	            _react2.default.createElement(
 	              'div',
-	              { className: 'input-number-wrap' },
+	              { className: 'input-number-wrap inline' },
 	              _react2.default.createElement('input', { type: 'number', ref: 'c1' })
 	            )
 	          ),
@@ -42086,35 +42086,42 @@
 	            'Ответ:'
 	          ),
 	          _react2.default.createElement(
-	            'p',
+	            'div',
 	            null,
-	            'X =  ',
 	            _react2.default.createElement(
 	              'div',
-	              { className: 'input-number-wrap' },
-	              _react2.default.createElement('input', { type: 'number', ref: 'x0' })
+	              { className: 'answer-area' },
+	              'X =  ',
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'input-number-wrap inline' },
+	                _react2.default.createElement('input', { type: 'number', ref: 'x0' })
+	              ),
+	              '  +  ',
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'input-number-wrap inline' },
+	                _react2.default.createElement('input', { type: 'number', ref: 'x1' })
+	              ),
+	              't'
 	            ),
-	            '  +  ',
 	            _react2.default.createElement(
 	              'div',
-	              { className: 'input-number-wrap' },
-	              _react2.default.createElement('input', { type: 'number', ref: 'x1' })
-	            ),
-	            't',
-	            _react2.default.createElement('br', null),
-	            'Y =  ',
-	            _react2.default.createElement(
-	              'div',
-	              { className: 'input-number-wrap' },
-	              _react2.default.createElement('input', { type: 'number', ref: 'y0' })
-	            ),
-	            '  +  ',
-	            _react2.default.createElement(
-	              'div',
-	              { className: 'input-number-wrap' },
-	              _react2.default.createElement('input', { type: 'number', ref: 'y1' })
-	            ),
-	            't'
+	              { className: 'answer-area' },
+	              'Y =  ',
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'input-number-wrap inline' },
+	                _react2.default.createElement('input', { type: 'number', ref: 'y0' })
+	              ),
+	              '  +  ',
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'input-number-wrap inline' },
+	                _react2.default.createElement('input', { type: 'number', ref: 'y1' })
+	              ),
+	              't'
+	            )
 	          ),
 	          _react2.default.createElement(
 	            'div',
