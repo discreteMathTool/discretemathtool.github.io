@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import values from 'object.values'
+import { Link } from 'react-router'
 
 export default class Group extends Component {
   
@@ -20,10 +21,10 @@ export default class Group extends Component {
         <ul className="students">
           {this.state ? values(this.state).map(student => {
             return (<li className="student" key={student._id}>
-              <a href={'/s/' + student._id + '/info'}>
+              <Link to={'/student/' + student._id}>
                 <img src={student.photo} className="photo" />
                 <span className="name">{student.first_name} {student.last_name}</span>
-              </a>
+              </Link>
             </li>)
           }) : null}
         </ul>

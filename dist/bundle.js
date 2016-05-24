@@ -115,7 +115,8 @@
 	    _react2.default.createElement(_reactRouter.Route, { path: 'horner/show', component: _algorithms.HornerShow }),
 	    _react2.default.createElement(_reactRouter.Route, { path: 'horner/trainer', component: _algorithms.HornerTrainer }),
 	    _react2.default.createElement(_reactRouter.Route, { path: 'horner/test', component: _algorithms.HornerTest }),
-	    _react2.default.createElement(_reactRouter.Route, { path: 'group/:groupID', component: _components.Group })
+	    _react2.default.createElement(_reactRouter.Route, { path: 'group/:groupID', component: _components.Group }),
+	    _react2.default.createElement(_reactRouter.Route, { path: 'student/:studentID', component: _components.Student })
 	  )
 	), document.getElementById('mount'));
 
@@ -38622,7 +38623,7 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.Group = exports.About = exports.Home = exports.MainNavigation = exports.Header = exports.App = undefined;
+	exports.Student = exports.Group = exports.About = exports.Home = exports.MainNavigation = exports.Header = exports.App = undefined;
 
 	var _App2 = __webpack_require__(593);
 
@@ -38648,6 +38649,10 @@
 
 	var _Group3 = _interopRequireDefault(_Group2);
 
+	var _Student2 = __webpack_require__(654);
+
+	var _Student3 = _interopRequireDefault(_Student2);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	exports.App = _App3.default;
@@ -38656,6 +38661,7 @@
 	exports.Home = _Home3.default;
 	exports.About = _About3.default;
 	exports.Group = _Group3.default;
+	exports.Student = _Student3.default;
 
 /***/ },
 /* 593 */
@@ -43540,6 +43546,8 @@
 
 	var _object2 = _interopRequireDefault(_object);
 
+	var _reactRouter = __webpack_require__(536);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -43584,8 +43592,8 @@
 	              'li',
 	              { className: 'student', key: student._id },
 	              _react2.default.createElement(
-	                'a',
-	                { href: '/s/' + student._id + '/info' },
+	                _reactRouter.Link,
+	                { to: '/student/' + student._id },
 	                _react2.default.createElement('img', { src: student.photo, className: 'photo' }),
 	                _react2.default.createElement(
 	                  'span',
@@ -44640,6 +44648,138 @@
 		return polyfill;
 	};
 
+
+/***/ },
+/* 654 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(122);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRouter = __webpack_require__(536);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Student = function (_Component) {
+	  _inherits(Student, _Component);
+
+	  function Student(props) {
+	    _classCallCheck(this, Student);
+
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Student).call(this, props));
+
+	    fetch('http://88.201.187.23:8888/s/' + _this.props.params.studentID + '/info').then(function (response) {
+	      return response.json();
+	    }).then(function (student) {
+	      fetch('http://88.201.187.23:8888/s/' + _this.props.params.studentID + '/tests').then(function (response) {
+	        return response.json();
+	      }).then(function (tests) {
+	        _this.setState({
+	          student: student,
+	          tests: tests
+	        });
+	      });
+	    }).catch(console.error);
+	    return _this;
+	  }
+
+	  _createClass(Student, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        { id: 'student-page', className: 'content-wrap' },
+	        this.state ? _react2.default.createElement(
+	          'div',
+	          null,
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'user' },
+	            _react2.default.createElement('img', { src: this.state.student.photo, className: 'photo' }),
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'info' },
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'name field' },
+	                this.state.student.first_name,
+	                ' ',
+	                this.state.student.last_name
+	              ),
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'group field' },
+	                'Группа  ',
+	                _react2.default.createElement(
+	                  _reactRouter.Link,
+	                  { to: '/group/' + this.state.student.group },
+	                  this.state.student.group
+	                )
+	              ),
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'email field' },
+	                _react2.default.createElement(
+	                  'a',
+	                  { href: 'mailto:' + this.state.student.email },
+	                  this.state.student.email
+	                )
+	              )
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'tests' },
+	            _react2.default.createElement(
+	              'h2',
+	              null,
+	              'Тесты'
+	            ),
+	            _react2.default.createElement(
+	              'ul',
+	              null,
+	              this.state.tests ? this.state.tests.map(function (test) {
+	                return _react2.default.createElement(
+	                  'li',
+	                  { className: 'student', key: test._id },
+	                  test.finished ? _react2.default.createElement(
+	                    'span',
+	                    null,
+	                    test.testName,
+	                    ' - пройден - время ',
+	                    Math.floor(test.duration / 60),
+	                    'мин ',
+	                    Math.floor(test.duration) % 60,
+	                    'с'
+	                  ) : null
+	                );
+	              }) : null
+	            )
+	          )
+	        ) : null
+	      );
+	    }
+	  }]);
+
+	  return Student;
+	}(_react.Component);
+
+	exports.default = Student;
 
 /***/ }
 /******/ ]);
