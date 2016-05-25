@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router'
+import Table from './Table'
 
 export default class Student extends Component {
   
@@ -39,16 +40,33 @@ export default class Student extends Component {
               </div>
             </div>
             <div className="tests">
-              <h2>Тесты</h2>
-              <ul>
-                {this.state.tests ? this.state.tests.map(test => {
-                  return (<li className="student" key={test._id}>
-                    {test.finished ? 
-                      <span>{test.testName} - пройден - время {Math.floor(test.duration / 60)}мин {Math.floor(test.duration) % 60}с</span>
-                    : null}
-                  </li>)
-                }) : null}
-              </ul>
+              {this.state.tests ? 
+                this.state.tests.count > 0 ? 
+                  <div>
+                    <h2>Тесты</h2>
+                    <ul>
+                      {this.state.tests.tests.map(test => {
+                      return (<li className="student" key={test._id}>
+                        {test.finished ? 
+                          <div className="test">
+                            <span>{test.testName} - пройден - время {Math.floor(test.duration / 60)}мин {Math.floor(test.duration) % 60}с</span>
+                            <h3>Решение студента</h3>
+                            <h4>Входные данные</h4>
+                            <div>{test.object.input.join(', ')}</div>
+                            <h4>Таблица</h4>
+                            <Table data={test.object.table.map(row => row.map(col => 
+                              <div className="number-wrap">{col}</div>
+                            ))}/>
+                            <h4>Ответ</h4>
+                            <div>{test.object.output}</div>
+                          </div>
+                        : null}
+                      </li>)
+                      })}
+                    </ul>
+                  </div>
+                : <h2>Нет решенных тестов</h2>
+              : null}
             </div>
           </div>
         : null}

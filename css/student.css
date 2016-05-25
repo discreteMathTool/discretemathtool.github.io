@@ -25,3 +25,12 @@
 #student-page .user .info a {
     color: #000;
 }
+
+#student-page .tests ul {
+    margin: 0;
+    padding: 0;
+}
+
+#student-page .tests .student {
+    list-style-type: none;
+}

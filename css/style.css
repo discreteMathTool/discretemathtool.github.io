@@ -8,6 +8,10 @@ body {
     overflow-y: scroll;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    font-weight: lighter;
+}
+
 /* Header */
 
 #header {
@@ -30,10 +34,13 @@ body {
     justify-content: flex-start;
     align-items: center;
     height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 #header .menu li {
     margin-left: 40px;
+    list-style-type: none;
 }
 #header .menu li:first-child {
     margin-left: 0;
@@ -70,6 +77,11 @@ body {
     width: 240px;
     margin-left: -10px;
     padding-right: 20px;
+}
+
+.main-navigation ul {
+    margin: 0;
+    padding: 0;
 }
 
 .main-navigation .spoiler {
@@ -112,20 +124,6 @@ body {
     margin-top: 0;
 }
 
-#content h1 {
-    margin: 30px 0 10px;
-    font-size: 39px;
-    font-weight: normal;
-    line-height: 40px;
-}
-
-#content h2 {
-    margin: 30px 0 10px;
-    font-size: 31px;
-    font-weight: normal;
-    line-height: 32px;
-}
-
 #content p,
 #content li {
     margin: 10px 0;
@@ -152,7 +150,8 @@ body {
 }
 
 #content table {
-    margin-top: 20px;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
 #content table td {
     border: 1px solid #666;
