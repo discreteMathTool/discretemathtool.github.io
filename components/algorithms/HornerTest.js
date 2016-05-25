@@ -67,7 +67,7 @@ export default class HornerTest extends Component {
         <h2>Контроль</h2>
         {this.state.input ? 
           <div>
-            <p>Поделим многочлен {this.polynomial(this.state.input[0])} на бином ({this.polynomial([1, this.state.input[1]])})</p>
+            <p>Поделим многочлен {this.polynomial(this.state.input[0])} на бином ({this.polynomial([1, -1 * this.state.input[1]])})</p>
             <div className="table">
               <Table data={this.state.table.map((row, i) => row.map((col, j) => {
                 return i == 0 && j == 0 ? <input type="number" disabled={true}/> : <input type="number"/>

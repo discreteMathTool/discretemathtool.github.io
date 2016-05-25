@@ -103,6 +103,9 @@ h1, h2, h3, h4, h5, h6 {
 .main-navigation .spoiler.active .content {
     max-height: 100px;
 }
+.main-navigation .spoiler .content li {
+    list-style-type: none;
+}
 
 .main-navigation .spoiler .content a {
     display: block;

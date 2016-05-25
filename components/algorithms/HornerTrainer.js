@@ -58,7 +58,7 @@ export default class HornerTrainer extends Component {
         <h2>Тренажёр</h2>
         {this.state.input ? 
           <div>
-            <p>Поделим многочлен {this.polynomial(this.state.input[0])} на бином ({this.polynomial([1, this.state.input[1]])})</p>
+            <p>Поделим многочлен {this.polynomial(this.state.input[0])} на бином ({this.polynomial([1, -1 * this.state.input[1]])})</p>
             <Table data={this.state.table.map(row => row.map(col => 
               col !== '' ? (
                 <div className="input-number-wrap">

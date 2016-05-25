@@ -38,11 +38,11 @@ export default class HornerShow extends Component {
           <div className="content-wrap">
             <h1>Схема Горнера</h1>
             <h2>Демонстрация</h2>
-            <p>Поделим многочлен {this.polynomial(this.state.input[0])} на бином ({this.polynomial([1, this.state.input[1]])})</p>
+            <p>Поделим многочлен {this.polynomial(this.state.input[0])} на бином ({this.polynomial([1, -1 * this.state.input[1]])})</p>
             <Table data={this.state.table.map(row => row.map(col => 
                 <div className="number-wrap">{col}</div>
             ))}/>
-            <code>Ответ: ({this.polynomial([1, this.state.input[1]])})({this.polynomial(this.state.table[1].slice(1, -1))}){this.state.table[1].slice(-1).pop() > 0 ? '+' : ''}{this.state.table[1].slice(-1).pop()}
+            <code>Ответ: ({this.polynomial([1, -1 * this.state.input[1]])})({this.polynomial(this.state.table[1].slice(1, -1))}){this.state.table[1].slice(-1).pop() > 0 ? '+' : ''}{this.state.table[1].slice(-1).pop() !== 0 ? this.state.table[1].slice(-1).pop() : ''}
             </code>
             <div className="button-wrap">
               <button onClick={e => this.refreshExample()}>Обновить</button>

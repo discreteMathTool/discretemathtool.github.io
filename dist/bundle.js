@@ -70,7 +70,7 @@
 
 	var _components = __webpack_require__(592);
 
-	var _algorithms = __webpack_require__(626);
+	var _algorithms = __webpack_require__(627);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -40189,7 +40189,7 @@
 
 	var _reactRouter = __webpack_require__(536);
 
-	var _Table = __webpack_require__(628);
+	var _Table = __webpack_require__(626);
 
 	var _Table2 = _interopRequireDefault(_Table);
 
@@ -40362,6 +40362,58 @@
 /* 626 */
 /***/ function(module, exports, __webpack_require__) {
 
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = Table;
+
+	var _react = __webpack_require__(122);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function Table(_ref) {
+	  var data = _ref.data;
+
+
+	  return _react2.default.createElement(
+	    "div",
+	    { className: "table-wrap" },
+	    _react2.default.createElement(
+	      "table",
+	      null,
+	      _react2.default.createElement(
+	        "tbody",
+	        null,
+	        data.map(function (row) {
+	          return _react2.default.createElement(
+	            "tr",
+	            null,
+	            row.map(function (col) {
+	              return _react2.default.createElement(
+	                "td",
+	                null,
+	                col
+	              );
+	            })
+	          );
+	        })
+	      )
+	    )
+	  );
+	}
+
+	Table.propTypes = {
+	  data: _react2.default.PropTypes.array.isRequired
+	};
+
+/***/ },
+/* 627 */
+/***/ function(module, exports, __webpack_require__) {
+
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
@@ -40369,7 +40421,7 @@
 	});
 	exports.HornerTest = exports.HornerTrainer = exports.HornerShow = exports.ConversionTest = exports.ConversionTrainer = exports.ConversionShow = exports.FastDegreeTest = exports.FastDegreeTrainer = exports.FastDegreeShow = exports.DiophantineTest = exports.DiophantineTrainer = exports.DiophantineShow = exports.InverseTest = exports.InverseTrainer = exports.InverseShow = exports.ConvergentsTest = exports.ConvergentsTrainer = exports.ConvergentsShow = exports.FractionTest = exports.FractionTrainer = exports.FractionShow = exports.axbyTest = exports.axbyTrainer = exports.axbyShow = exports.GCDTest = exports.GCDTrainer = exports.GCDShow = undefined;
 
-	var _GCDShow2 = __webpack_require__(627);
+	var _GCDShow2 = __webpack_require__(628);
 
 	var _GCDShow3 = _interopRequireDefault(_GCDShow2);
 
@@ -40508,7 +40560,7 @@
 	exports.HornerTest = _HornerTest3.default;
 
 /***/ },
-/* 627 */
+/* 628 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -40523,7 +40575,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _Table = __webpack_require__(628);
+	var _Table = __webpack_require__(626);
 
 	var _Table2 = _interopRequireDefault(_Table);
 
@@ -40645,58 +40697,6 @@
 	exports.default = GCDShow;
 
 /***/ },
-/* 628 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.default = Table;
-
-	var _react = __webpack_require__(122);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function Table(_ref) {
-	  var data = _ref.data;
-
-
-	  return _react2.default.createElement(
-	    "div",
-	    { className: "table-wrap" },
-	    _react2.default.createElement(
-	      "table",
-	      null,
-	      _react2.default.createElement(
-	        "tbody",
-	        null,
-	        data.map(function (row) {
-	          return _react2.default.createElement(
-	            "tr",
-	            null,
-	            row.map(function (col) {
-	              return _react2.default.createElement(
-	                "td",
-	                null,
-	                col
-	              );
-	            })
-	          );
-	        })
-	      )
-	    )
-	  );
-	}
-
-	Table.propTypes = {
-	  data: _react2.default.PropTypes.array.isRequired
-	};
-
-/***/ },
 /* 629 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -40716,7 +40716,7 @@
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
-	var _Table = __webpack_require__(628);
+	var _Table = __webpack_require__(626);
 
 	var _Table2 = _interopRequireDefault(_Table);
 
@@ -40876,7 +40876,7 @@
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
-	var _Table = __webpack_require__(628);
+	var _Table = __webpack_require__(626);
 
 	var _Table2 = _interopRequireDefault(_Table);
 
@@ -41044,7 +41044,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _Table = __webpack_require__(628);
+	var _Table = __webpack_require__(626);
 
 	var _Table2 = _interopRequireDefault(_Table);
 
@@ -41172,7 +41172,7 @@
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
-	var _Table = __webpack_require__(628);
+	var _Table = __webpack_require__(626);
 
 	var _Table2 = _interopRequireDefault(_Table);
 
@@ -41330,7 +41330,7 @@
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
-	var _Table = __webpack_require__(628);
+	var _Table = __webpack_require__(626);
 
 	var _Table2 = _interopRequireDefault(_Table);
 
@@ -41494,7 +41494,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _Table = __webpack_require__(628);
+	var _Table = __webpack_require__(626);
 
 	var _Table2 = _interopRequireDefault(_Table);
 
@@ -41619,7 +41619,7 @@
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
-	var _Table = __webpack_require__(628);
+	var _Table = __webpack_require__(626);
 
 	var _Table2 = _interopRequireDefault(_Table);
 
@@ -41768,7 +41768,7 @@
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
-	var _Table = __webpack_require__(628);
+	var _Table = __webpack_require__(626);
 
 	var _Table2 = _interopRequireDefault(_Table);
 
@@ -41918,7 +41918,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _Table = __webpack_require__(628);
+	var _Table = __webpack_require__(626);
 
 	var _Table2 = _interopRequireDefault(_Table);
 
@@ -42048,7 +42048,7 @@
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
-	var _Table = __webpack_require__(628);
+	var _Table = __webpack_require__(626);
 
 	var _Table2 = _interopRequireDefault(_Table);
 
@@ -42188,7 +42188,7 @@
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
-	var _Table = __webpack_require__(628);
+	var _Table = __webpack_require__(626);
 
 	var _Table2 = _interopRequireDefault(_Table);
 
@@ -42334,7 +42334,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _Table = __webpack_require__(628);
+	var _Table = __webpack_require__(626);
 
 	var _Table2 = _interopRequireDefault(_Table);
 
@@ -42486,7 +42486,7 @@
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
-	var _Table = __webpack_require__(628);
+	var _Table = __webpack_require__(626);
 
 	var _Table2 = _interopRequireDefault(_Table);
 
@@ -42641,7 +42641,7 @@
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
-	var _Table = __webpack_require__(628);
+	var _Table = __webpack_require__(626);
 
 	var _Table2 = _interopRequireDefault(_Table);
 
@@ -42800,7 +42800,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _Table = __webpack_require__(628);
+	var _Table = __webpack_require__(626);
 
 	var _Table2 = _interopRequireDefault(_Table);
 
@@ -43022,7 +43022,7 @@
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
-	var _Table = __webpack_require__(628);
+	var _Table = __webpack_require__(626);
 
 	var _Table2 = _interopRequireDefault(_Table);
 
@@ -43265,7 +43265,7 @@
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
-	var _Table = __webpack_require__(628);
+	var _Table = __webpack_require__(626);
 
 	var _Table2 = _interopRequireDefault(_Table);
 
@@ -43483,7 +43483,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _Table = __webpack_require__(628);
+	var _Table = __webpack_require__(626);
 
 	var _Table2 = _interopRequireDefault(_Table);
 
@@ -43605,7 +43605,7 @@
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
-	var _Table = __webpack_require__(628);
+	var _Table = __webpack_require__(626);
 
 	var _Table2 = _interopRequireDefault(_Table);
 
@@ -43758,7 +43758,7 @@
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
-	var _Table = __webpack_require__(628);
+	var _Table = __webpack_require__(626);
 
 	var _Table2 = _interopRequireDefault(_Table);
 
@@ -43915,7 +43915,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _Table = __webpack_require__(628);
+	var _Table = __webpack_require__(626);
 
 	var _Table2 = _interopRequireDefault(_Table);
 
@@ -44047,7 +44047,7 @@
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
-	var _Table = __webpack_require__(628);
+	var _Table = __webpack_require__(626);
 
 	var _Table2 = _interopRequireDefault(_Table);
 
@@ -44205,7 +44205,7 @@
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
-	var _Table = __webpack_require__(628);
+	var _Table = __webpack_require__(626);
 
 	var _Table2 = _interopRequireDefault(_Table);
 
@@ -44367,7 +44367,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _Table = __webpack_require__(628);
+	var _Table = __webpack_require__(626);
 
 	var _Table2 = _interopRequireDefault(_Table);
 
@@ -44454,7 +44454,7 @@
 	            'Поделим многочлен ',
 	            this.polynomial(this.state.input[0]),
 	            ' на бином (',
-	            this.polynomial([1, this.state.input[1]]),
+	            this.polynomial([1, -1 * this.state.input[1]]),
 	            ')'
 	          ),
 	          _react2.default.createElement(_Table2.default, { data: this.state.table.map(function (row) {
@@ -44470,12 +44470,12 @@
 	            'code',
 	            null,
 	            'Ответ: (',
-	            this.polynomial([1, this.state.input[1]]),
+	            this.polynomial([1, -1 * this.state.input[1]]),
 	            ')(',
 	            this.polynomial(this.state.table[1].slice(1, -1)),
 	            ')',
 	            this.state.table[1].slice(-1).pop() > 0 ? '+' : '',
-	            this.state.table[1].slice(-1).pop()
+	            this.state.table[1].slice(-1).pop() !== 0 ? this.state.table[1].slice(-1).pop() : ''
 	          ),
 	          _react2.default.createElement(
 	            'div',
@@ -44518,7 +44518,7 @@
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
-	var _Table = __webpack_require__(628);
+	var _Table = __webpack_require__(626);
 
 	var _Table2 = _interopRequireDefault(_Table);
 
@@ -44624,7 +44624,7 @@
 	            'Поделим многочлен ',
 	            this.polynomial(this.state.input[0]),
 	            ' на бином (',
-	            this.polynomial([1, this.state.input[1]]),
+	            this.polynomial([1, -1 * this.state.input[1]]),
 	            ')'
 	          ),
 	          _react2.default.createElement(_Table2.default, { data: this.state.table.map(function (row) {
@@ -44682,7 +44682,7 @@
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
-	var _Table = __webpack_require__(628);
+	var _Table = __webpack_require__(626);
 
 	var _Table2 = _interopRequireDefault(_Table);
 
@@ -44802,7 +44802,7 @@
 	            'Поделим многочлен ',
 	            this.polynomial(this.state.input[0]),
 	            ' на бином (',
-	            this.polynomial([1, this.state.input[1]]),
+	            this.polynomial([1, -1 * this.state.input[1]]),
 	            ')'
 	          ),
 	          _react2.default.createElement(
