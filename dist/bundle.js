@@ -38845,7 +38845,13 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+	function getCookie(name) {
+	  var matches = document.cookie.match(new RegExp("(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"));
+	  return matches ? decodeURIComponent(matches[1]) : undefined;
+	}
+
 	function Header() {
+	  var studentID = getCookie('student_id');
 	  return _react2.default.createElement(
 	    'header',
 	    { id: 'header' },
@@ -38873,6 +38879,15 @@
 	            'О проекте'
 	          )
 	        )
+	      ),
+	      studentID ? _react2.default.createElement(
+	        _reactRouter.Link,
+	        { to: '/student/' + studentID, className: 'button' },
+	        'Личный кабинет'
+	      ) : _react2.default.createElement(
+	        'a',
+	        { href: '/auth/google', className: 'button' },
+	        'Войти через Google'
 	      )
 	    )
 	  );

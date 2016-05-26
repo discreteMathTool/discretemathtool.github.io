@@ -21,7 +21,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #header .menu {
-    display: block;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     width: 1160px;
     height: 100%;
     margin-left: auto;
@@ -58,6 +61,22 @@ h1, h2, h3, h4, h5, h6 {
 
 #header .menu .logo {
     height: 40px;
+}
+
+#header .menu .button {
+    display: block;
+    padding: 10px 20px;
+    color: #fff;
+    font-size: 14px;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: #c05b4d;
+    transition: background-color 0.2s;
+}
+#header .menu .button:hover {
+    background-color: #AA5144;
 }
 
 .container {
@@ -140,11 +159,6 @@ h1, h2, h3, h4, h5, h6 {
     color: #484848;
     font-size: 15px;
     line-height: 17px;
-}
-
-#content ol {
-    margin: 20px 0 20px 40px;
-    list-style-type: decimal;
 }
 
 #content .table-wrap {

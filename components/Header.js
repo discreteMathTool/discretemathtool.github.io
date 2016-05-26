@@ -1,7 +1,15 @@
 import React from 'react'
 import { Link } from 'react-router'
 
+function getCookie (name) {
+  var matches = document.cookie.match(new RegExp(
+    "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+  ));
+  return matches ? decodeURIComponent(matches[1]) : undefined;
+}
+
 export default function Header () {
+  const studentID = getCookie('student_id');
   return (
     <header id="header">
       <nav className="menu">
@@ -9,6 +17,8 @@ export default function Header () {
           <li><Link to="/"><img src="/images/leti.png" className="logo" alt="ЛЭТИ" title="Home" /></Link></li>
           <li><Link to="/about">О проекте</Link></li>
         </ul>
+        {studentID ? <Link to={'/student/' + studentID} className="button">Личный кабинет</Link> : 
+          <a href="/auth/google" className="button">Войти через Google</a>}
       </nav>
     </header>
   )
