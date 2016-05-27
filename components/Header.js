@@ -16,6 +16,7 @@ export default function Header () {
         <ul>
           <li><Link to="/"><img src="/images/leti.png" className="logo" alt="ЛЭТИ" title="Home" /></Link></li>
           <li><Link to="/about">О проекте</Link></li>
+          <li><Link to="/group">Список групп</Link></li>
         </ul>
         {studentID ? <Link to={'/student/' + studentID} className="button">Личный кабинет</Link> : 
           <a href="/auth/google" className="button">Войти через Google</a>}

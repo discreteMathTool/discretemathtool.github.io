@@ -70,7 +70,7 @@
 
 	var _components = __webpack_require__(592);
 
-	var _algorithms = __webpack_require__(627);
+	var _algorithms = __webpack_require__(628);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -116,7 +116,8 @@
 	    _react2.default.createElement(_reactRouter.Route, { path: 'horner/trainer', component: _algorithms.HornerTrainer }),
 	    _react2.default.createElement(_reactRouter.Route, { path: 'horner/test', component: _algorithms.HornerTest }),
 	    _react2.default.createElement(_reactRouter.Route, { path: 'group/:groupID', component: _components.Group }),
-	    _react2.default.createElement(_reactRouter.Route, { path: 'student/:studentID', component: _components.Student })
+	    _react2.default.createElement(_reactRouter.Route, { path: 'student/:studentID', component: _components.Student }),
+	    _react2.default.createElement(_reactRouter.Route, { path: 'group', component: _components.Stream })
 	  )
 	), document.getElementById('mount'));
 
@@ -38623,7 +38624,7 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.Student = exports.Group = exports.About = exports.Home = exports.MainNavigation = exports.Header = exports.App = undefined;
+	exports.Stream = exports.Student = exports.Group = exports.About = exports.Home = exports.MainNavigation = exports.Header = exports.App = undefined;
 
 	var _App2 = __webpack_require__(593);
 
@@ -38653,6 +38654,10 @@
 
 	var _Student3 = _interopRequireDefault(_Student2);
 
+	var _Stream2 = __webpack_require__(627);
+
+	var _Stream3 = _interopRequireDefault(_Stream2);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	exports.App = _App3.default;
@@ -38662,6 +38667,7 @@
 	exports.About = _About3.default;
 	exports.Group = _Group3.default;
 	exports.Student = _Student3.default;
+	exports.Stream = _Stream3.default;
 
 /***/ },
 /* 593 */
@@ -38877,6 +38883,15 @@
 	            _reactRouter.Link,
 	            { to: '/about' },
 	            'О проекте'
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'li',
+	          null,
+	          _react2.default.createElement(
+	            _reactRouter.Link,
+	            { to: '/group' },
+	            'Список групп'
 	          )
 	        )
 	      ),
@@ -40434,113 +40449,210 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(122);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _object = __webpack_require__(599);
+
+	var _object2 = _interopRequireDefault(_object);
+
+	var _reactRouter = __webpack_require__(536);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Stream = function (_Component) {
+	  _inherits(Stream, _Component);
+
+	  function Stream(props) {
+	    _classCallCheck(this, Stream);
+
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Stream).call(this, props));
+
+	    fetch('http://88.201.187.23:8888/g/list').then(function (response) {
+	      return response.json();
+	    }).then(function (stream) {
+	      _this.setState(stream);
+	    }).catch(console.error);
+	    return _this;
+	  }
+
+	  _createClass(Stream, [{
+	    key: 'humans',
+	    value: function humans(count) {
+	      if (count % 10 === 1) {
+	        return count + ' студент';
+	      } else if (count % 10 < 5) {
+	        return count + ' студента';
+	      } else {
+	        return count + ' студентов';
+	      }
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var _this2 = this;
+
+	      console.log(this.state);
+	      return _react2.default.createElement(
+	        'div',
+	        { id: 'stream-page', className: 'content-wrap' },
+	        _react2.default.createElement(
+	          'h1',
+	          null,
+	          'Группы'
+	        ),
+	        _react2.default.createElement(
+	          'ul',
+	          { className: 'groups' },
+	          this.state ? (0, _object2.default)(this.state).map(function (group) {
+	            return _react2.default.createElement(
+	              'li',
+	              { className: 'group', key: group[0] },
+	              _react2.default.createElement(
+	                _reactRouter.Link,
+	                { to: '/group/' + group[0] },
+	                group[0],
+	                ' - ',
+	                _this2.humans(group[1])
+	              )
+	            );
+	          }) : null
+	        )
+	      );
+	    }
+	  }]);
+
+	  return Stream;
+	}(_react.Component);
+
+	exports.default = Stream;
+
+/***/ },
+/* 628 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
 	exports.HornerTest = exports.HornerTrainer = exports.HornerShow = exports.ConversionTest = exports.ConversionTrainer = exports.ConversionShow = exports.FastDegreeTest = exports.FastDegreeTrainer = exports.FastDegreeShow = exports.DiophantineTest = exports.DiophantineTrainer = exports.DiophantineShow = exports.InverseTest = exports.InverseTrainer = exports.InverseShow = exports.ConvergentsTest = exports.ConvergentsTrainer = exports.ConvergentsShow = exports.FractionTest = exports.FractionTrainer = exports.FractionShow = exports.axbyTest = exports.axbyTrainer = exports.axbyShow = exports.GCDTest = exports.GCDTrainer = exports.GCDShow = undefined;
 
-	var _GCDShow2 = __webpack_require__(628);
+	var _GCDShow2 = __webpack_require__(629);
 
 	var _GCDShow3 = _interopRequireDefault(_GCDShow2);
 
-	var _GCDTrainer2 = __webpack_require__(629);
+	var _GCDTrainer2 = __webpack_require__(630);
 
 	var _GCDTrainer3 = _interopRequireDefault(_GCDTrainer2);
 
-	var _GCDTest2 = __webpack_require__(630);
+	var _GCDTest2 = __webpack_require__(631);
 
 	var _GCDTest3 = _interopRequireDefault(_GCDTest2);
 
-	var _axbyShow2 = __webpack_require__(631);
+	var _axbyShow2 = __webpack_require__(632);
 
 	var _axbyShow3 = _interopRequireDefault(_axbyShow2);
 
-	var _axbyTrainer2 = __webpack_require__(632);
+	var _axbyTrainer2 = __webpack_require__(633);
 
 	var _axbyTrainer3 = _interopRequireDefault(_axbyTrainer2);
 
-	var _axbyTest2 = __webpack_require__(633);
+	var _axbyTest2 = __webpack_require__(634);
 
 	var _axbyTest3 = _interopRequireDefault(_axbyTest2);
 
-	var _FractionShow2 = __webpack_require__(634);
+	var _FractionShow2 = __webpack_require__(635);
 
 	var _FractionShow3 = _interopRequireDefault(_FractionShow2);
 
-	var _FractionTrainer2 = __webpack_require__(635);
+	var _FractionTrainer2 = __webpack_require__(636);
 
 	var _FractionTrainer3 = _interopRequireDefault(_FractionTrainer2);
 
-	var _FractionTest2 = __webpack_require__(636);
+	var _FractionTest2 = __webpack_require__(637);
 
 	var _FractionTest3 = _interopRequireDefault(_FractionTest2);
 
-	var _ConvergentsShow2 = __webpack_require__(637);
+	var _ConvergentsShow2 = __webpack_require__(638);
 
 	var _ConvergentsShow3 = _interopRequireDefault(_ConvergentsShow2);
 
-	var _ConvergentsTrainer2 = __webpack_require__(638);
+	var _ConvergentsTrainer2 = __webpack_require__(639);
 
 	var _ConvergentsTrainer3 = _interopRequireDefault(_ConvergentsTrainer2);
 
-	var _ConvergentsTest2 = __webpack_require__(639);
+	var _ConvergentsTest2 = __webpack_require__(640);
 
 	var _ConvergentsTest3 = _interopRequireDefault(_ConvergentsTest2);
 
-	var _InverseShow2 = __webpack_require__(640);
+	var _InverseShow2 = __webpack_require__(641);
 
 	var _InverseShow3 = _interopRequireDefault(_InverseShow2);
 
-	var _InverseTrainer2 = __webpack_require__(641);
+	var _InverseTrainer2 = __webpack_require__(642);
 
 	var _InverseTrainer3 = _interopRequireDefault(_InverseTrainer2);
 
-	var _InverseTest2 = __webpack_require__(642);
+	var _InverseTest2 = __webpack_require__(643);
 
 	var _InverseTest3 = _interopRequireDefault(_InverseTest2);
 
-	var _DiophantineShow2 = __webpack_require__(643);
+	var _DiophantineShow2 = __webpack_require__(644);
 
 	var _DiophantineShow3 = _interopRequireDefault(_DiophantineShow2);
 
-	var _DiophantineTrainer2 = __webpack_require__(644);
+	var _DiophantineTrainer2 = __webpack_require__(645);
 
 	var _DiophantineTrainer3 = _interopRequireDefault(_DiophantineTrainer2);
 
-	var _DiophantineTest2 = __webpack_require__(645);
+	var _DiophantineTest2 = __webpack_require__(646);
 
 	var _DiophantineTest3 = _interopRequireDefault(_DiophantineTest2);
 
-	var _FastDegreeShow2 = __webpack_require__(646);
+	var _FastDegreeShow2 = __webpack_require__(647);
 
 	var _FastDegreeShow3 = _interopRequireDefault(_FastDegreeShow2);
 
-	var _FastDegreeTrainer2 = __webpack_require__(647);
+	var _FastDegreeTrainer2 = __webpack_require__(648);
 
 	var _FastDegreeTrainer3 = _interopRequireDefault(_FastDegreeTrainer2);
 
-	var _FastDegreeTest2 = __webpack_require__(648);
+	var _FastDegreeTest2 = __webpack_require__(649);
 
 	var _FastDegreeTest3 = _interopRequireDefault(_FastDegreeTest2);
 
-	var _ConversionShow2 = __webpack_require__(649);
+	var _ConversionShow2 = __webpack_require__(650);
 
 	var _ConversionShow3 = _interopRequireDefault(_ConversionShow2);
 
-	var _ConversionTrainer2 = __webpack_require__(650);
+	var _ConversionTrainer2 = __webpack_require__(651);
 
 	var _ConversionTrainer3 = _interopRequireDefault(_ConversionTrainer2);
 
-	var _ConversionTest2 = __webpack_require__(651);
+	var _ConversionTest2 = __webpack_require__(652);
 
 	var _ConversionTest3 = _interopRequireDefault(_ConversionTest2);
 
-	var _HornerShow2 = __webpack_require__(652);
+	var _HornerShow2 = __webpack_require__(653);
 
 	var _HornerShow3 = _interopRequireDefault(_HornerShow2);
 
-	var _HornerTrainer2 = __webpack_require__(653);
+	var _HornerTrainer2 = __webpack_require__(654);
 
 	var _HornerTrainer3 = _interopRequireDefault(_HornerTrainer2);
 
-	var _HornerTest2 = __webpack_require__(654);
+	var _HornerTest2 = __webpack_require__(655);
 
 	var _HornerTest3 = _interopRequireDefault(_HornerTest2);
 
@@ -40575,7 +40687,7 @@
 	exports.HornerTest = _HornerTest3.default;
 
 /***/ },
-/* 628 */
+/* 629 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -40712,7 +40824,7 @@
 	exports.default = GCDShow;
 
 /***/ },
-/* 629 */
+/* 630 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -40870,7 +40982,7 @@
 	exports.default = GCDTrainer;
 
 /***/ },
-/* 630 */
+/* 631 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -41044,7 +41156,7 @@
 	exports.default = GCDTest;
 
 /***/ },
-/* 631 */
+/* 632 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -41168,7 +41280,7 @@
 	exports.default = axbyShow;
 
 /***/ },
-/* 632 */
+/* 633 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -41324,7 +41436,7 @@
 	exports.default = axbyTrainer;
 
 /***/ },
-/* 633 */
+/* 634 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -41494,7 +41606,7 @@
 	exports.default = axbyTest;
 
 /***/ },
-/* 634 */
+/* 635 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -41615,7 +41727,7 @@
 	exports.default = FractionShow;
 
 /***/ },
-/* 635 */
+/* 636 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -41762,7 +41874,7 @@
 	exports.default = FractionTrainer;
 
 /***/ },
-/* 636 */
+/* 637 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -41918,7 +42030,7 @@
 	exports.default = FractionTest;
 
 /***/ },
-/* 637 */
+/* 638 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -42044,7 +42156,7 @@
 	exports.default = ConvergentsShow;
 
 /***/ },
-/* 638 */
+/* 639 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -42182,7 +42294,7 @@
 	exports.default = ConvergentsTrainer;
 
 /***/ },
-/* 639 */
+/* 640 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -42334,7 +42446,7 @@
 	exports.default = ConvergentsTest;
 
 /***/ },
-/* 640 */
+/* 641 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -42482,7 +42594,7 @@
 	exports.default = InverseShow;
 
 /***/ },
-/* 641 */
+/* 642 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -42635,7 +42747,7 @@
 	exports.default = InverseTrainer;
 
 /***/ },
-/* 642 */
+/* 643 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -42800,7 +42912,7 @@
 	exports.default = InverseTest;
 
 /***/ },
-/* 643 */
+/* 644 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -43018,7 +43130,7 @@
 	exports.default = DiophantineShow;
 
 /***/ },
-/* 644 */
+/* 645 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -43259,7 +43371,7 @@
 	exports.default = DiophantineTrainer;
 
 /***/ },
-/* 645 */
+/* 646 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -43483,7 +43595,7 @@
 	exports.default = DiophantineTest;
 
 /***/ },
-/* 646 */
+/* 647 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -43601,7 +43713,7 @@
 	exports.default = FastDegreeShow;
 
 /***/ },
-/* 647 */
+/* 648 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -43752,7 +43864,7 @@
 	exports.default = FastDegreeTrainer;
 
 /***/ },
-/* 648 */
+/* 649 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -43915,7 +44027,7 @@
 	exports.default = FastDegreeTest;
 
 /***/ },
-/* 649 */
+/* 650 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -44043,7 +44155,7 @@
 	exports.default = ConversionShow;
 
 /***/ },
-/* 650 */
+/* 651 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -44199,7 +44311,7 @@
 	exports.default = ConversionTrainer;
 
 /***/ },
-/* 651 */
+/* 652 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -44367,7 +44479,7 @@
 	exports.default = ConversionTest;
 
 /***/ },
-/* 652 */
+/* 653 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -44514,7 +44626,7 @@
 	exports.default = HornerShow;
 
 /***/ },
-/* 653 */
+/* 654 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -44676,7 +44788,7 @@
 	exports.default = HornerTrainer;
 
 /***/ },
-/* 654 */
+/* 655 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
