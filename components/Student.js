@@ -6,17 +6,24 @@ export default class Student extends Component {
   
   constructor (props) {
     super(props)
+    
     fetch('http://88.201.187.23:8888/s/' + this.props.params.studentID + '/info')
       .then(response => response.json())
       .then(student => {
-        fetch('http://88.201.187.23:8888/s/' + this.props.params.studentID + '/tests')
-          .then(response => response.json())
-          .then(tests => {
-            this.setState({
-              student : student,
-              tests   : tests,
-            })
-          })
+        this.setState({
+          ...this.state,
+          student : student,
+        })
+      })
+      .catch(console.error)
+
+    fetch('http://88.201.187.23:8888/s/' + this.props.params.studentID + '/tests')
+      .then(response => response.json())
+      .then(tests => {
+        this.setState({
+          ...this.state,
+          tests : tests,
+        })
       })
       .catch(console.error)
   }
@@ -24,7 +31,7 @@ export default class Student extends Component {
   render () {
     return (
       <div id="student-page" className="content-wrap">
-        {this.state ? 
+        {this.state && 'student' in this.state ? 
           <div>
             <div className="user">
               <img src={this.state.student.photo} className="photo"/>
@@ -40,7 +47,7 @@ export default class Student extends Component {
               </div>
             </div>
             <div className="tests">
-              {this.state.tests ? 
+              {'tests' in this.state ? 
                 this.state.tests.count > 0 ? 
                   <div>
                     <h2>Тесты</h2>

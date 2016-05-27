@@ -40211,6 +40211,8 @@
 	  value: true
 	});
 
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 	var _react = __webpack_require__(122);
@@ -40242,14 +40244,17 @@
 	    fetch('http://88.201.187.23:8888/s/' + _this.props.params.studentID + '/info').then(function (response) {
 	      return response.json();
 	    }).then(function (student) {
-	      fetch('http://88.201.187.23:8888/s/' + _this.props.params.studentID + '/tests').then(function (response) {
-	        return response.json();
-	      }).then(function (tests) {
-	        _this.setState({
-	          student: student,
-	          tests: tests
-	        });
-	      });
+	      _this.setState(_extends({}, _this.state, {
+	        student: student
+	      }));
+	    }).catch(console.error);
+
+	    fetch('http://88.201.187.23:8888/s/' + _this.props.params.studentID + '/tests').then(function (response) {
+	      return response.json();
+	    }).then(function (tests) {
+	      _this.setState(_extends({}, _this.state, {
+	        tests: tests
+	      }));
 	    }).catch(console.error);
 	    return _this;
 	  }
@@ -40260,7 +40265,7 @@
 	      return _react2.default.createElement(
 	        'div',
 	        { id: 'student-page', className: 'content-wrap' },
-	        this.state ? _react2.default.createElement(
+	        this.state && 'student' in this.state ? _react2.default.createElement(
 	          'div',
 	          null,
 	          _react2.default.createElement(
@@ -40301,7 +40306,7 @@
 	          _react2.default.createElement(
 	            'div',
 	            { className: 'tests' },
-	            this.state.tests ? this.state.tests.count > 0 ? _react2.default.createElement(
+	            'tests' in this.state ? this.state.tests.count > 0 ? _react2.default.createElement(
 	              'div',
 	              null,
 	              _react2.default.createElement(
