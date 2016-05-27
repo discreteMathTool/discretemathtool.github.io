@@ -6,10 +6,10 @@ export default function Table ({ data }) {
     <div className="table-wrap">
       <table>
         <tbody>
-          {data.map(row => 
-            <tr>
-              {row.map(col =>
-                <td>{col}</td>
+          {data.map((row, i) => 
+            <tr key={i}>
+              {row.map((col, j) =>
+                <td key={j}>{col}</td>
               )}
             </tr>
           )}

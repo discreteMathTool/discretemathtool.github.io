@@ -40423,14 +40423,14 @@
 	      _react2.default.createElement(
 	        "tbody",
 	        null,
-	        data.map(function (row) {
+	        data.map(function (row, i) {
 	          return _react2.default.createElement(
 	            "tr",
-	            null,
-	            row.map(function (col) {
+	            { key: i },
+	            row.map(function (col, j) {
 	              return _react2.default.createElement(
 	                "td",
-	                null,
+	                { key: j },
 	                col
 	              );
 	            })
