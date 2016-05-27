@@ -40722,18 +40722,15 @@
 	var GCDShow = function (_Component) {
 	  _inherits(GCDShow, _Component);
 
-	  function GCDShow() {
-	    var _Object$getPrototypeO;
-
-	    var _temp, _this, _ret;
-
+	  function GCDShow(props) {
 	    _classCallCheck(this, GCDShow);
 
-	    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-	      args[_key] = arguments[_key];
-	    }
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(GCDShow).call(this, props));
 
-	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_Object$getPrototypeO = Object.getPrototypeOf(GCDShow)).call.apply(_Object$getPrototypeO, [this].concat(args))), _this), _this.state = GCDShow.examples[Math.floor(Math.random() * GCDShow.examples.length)], _temp), _possibleConstructorReturn(_this, _ret);
+	    _this.state = {};
+
+	    _this.refreshExample();
+	    return _this;
 	  }
 
 	  _createClass(GCDShow, [{
@@ -40741,15 +40738,11 @@
 	    value: function refreshExample() {
 	      var _this2 = this;
 
-	      if (GCDShow.examples.length > 1) {
-	        var newExampleIndex = Math.floor(Math.random() * GCDShow.examples.length);
-	        while (GCDShow.examples[newExampleIndex].input.every(function (x, i) {
-	          return x == _this2.state.input[i];
-	        })) {
-	          newExampleIndex = Math.floor(Math.random() * GCDShow.examples.length);
-	        }
-	        this.setState(GCDShow.examples[newExampleIndex]);
-	      }
+	      fetch('http://88.201.187.23:8888/solve/nod').then(function (response) {
+	        return response.json();
+	      }).then(function (example) {
+	        _this2.setState(example);
+	      }).catch(console.error);
 	    }
 	  }, {
 	    key: 'render',
@@ -40758,58 +40751,62 @@
 
 	      return _react2.default.createElement(
 	        'div',
-	        { className: 'content-wrap' },
-	        _react2.default.createElement(
-	          'h1',
-	          null,
-	          'Наибольший общий делитель'
-	        ),
-	        _react2.default.createElement(
-	          'h2',
-	          null,
-	          'Демонстрация'
-	        ),
-	        _react2.default.createElement(
-	          'p',
-	          null,
-	          'Даны числа ',
-	          this.state.input.join(', '),
-	          '.'
-	        ),
-	        _react2.default.createElement(
-	          'p',
-	          null,
-	          'Применим к ним алгоритм Евклида.'
-	        ),
-	        _react2.default.createElement(
-	          'p',
-	          null,
-	          'Получим следующую таблицу:'
-	        ),
-	        _react2.default.createElement(_Table2.default, { data: this.state.table.map(function (row) {
-	            return row.map(function (col) {
-	              return _react2.default.createElement(
-	                'div',
-	                { className: 'number-wrap' },
-	                col
-	              );
-	            });
-	          }) }),
-	        _react2.default.createElement(
-	          'code',
-	          null,
-	          'НОД(',
-	          this.state.input.join(', '),
-	          ') = ',
-	          this.state.output
-	        ),
-	        _react2.default.createElement(
-	          'button',
-	          { onClick: function onClick(e) {
-	              return _this3.refreshExample();
-	            } },
-	          'Обновить'
-	        )
+	        null,
+	        this.state.input ? _react2.default.createElement(
+	          'div',
+	          { className: 'content-wrap' },
+	          _react2.default.createElement(
+	            'h1',
+	            null,
+	            'Наибольший общий делитель'
+	          ),
+	          _react2.default.createElement(
+	            'h2',
+	            null,
+	            'Демонстрация'
+	          ),
+	          _react2.default.createElement(
+	            'p',
+	            null,
+	            'Даны числа ',
+	            this.state.input.join(', '),
+	            '.'
+	          ),
+	          _react2.default.createElement(
+	            'p',
+	            null,
+	            'Применим к ним алгоритм Евклида.'
+	          ),
+	          _react2.default.createElement(
+	            'p',
+	            null,
+	            'Получим следующую таблицу:'
+	          ),
+	          _react2.default.createElement(_Table2.default, { data: this.state.table.map(function (row) {
+	              return row.map(function (col) {
+	                return _react2.default.createElement(
+	                  'div',
+	                  { className: 'number-wrap' },
+	                  col
+	                );
+	              });
+	            }) }),
+	          _react2.default.createElement(
+	            'code',
+	            null,
+	            'НОД(',
+	            this.state.input.join(', '),
+	            ') = ',
+	            this.state.output
+	          ),
+	          _react2.default.createElement(
+	            'button',
+	            { onClick: function onClick(e) {
+	                return _this3.refreshExample();
+	              } },
+	            'Обновить'
+	          )
+	        ) : null
 	      );
 	    }
 	  }]);
@@ -40817,15 +40814,6 @@
 	  return GCDShow;
 	}(_react.Component);
 
-	GCDShow.examples = [{
-	  input: [178, 24],
-	  table: [[178, 24, 10, 4, 2, 0], ['', '', 7, 2, 2, 2]],
-	  output: 2
-	}, {
-	  input: [235, 80],
-	  table: [[235, 80, 75, 5, 0], ['', '', 2, 1, 15]],
-	  output: 5
-	}];
 	exports.default = GCDShow;
 
 /***/ },
