@@ -9,6 +9,13 @@
     <link rel="stylesheet" href="/css/group.css">
     <link rel="stylesheet" href="/css/student.css">
     <link rel="stylesheet" href="/css/stream.css">
+    <script src="/js/modernizr-custom.js"></script>
+    <script>
+      if (!Modernizr.fetch) {
+        document.write('<script src="/js/es6-promise.min.js"><' + '/script>');
+        document.write('<script src="/js/fetch.js"><' + '/script>');
+      }
+    </script>
   </head>
   <body>
     <div id="mount"></div>
