@@ -58,7 +58,6 @@ export default class Student extends Component {
                   </div>
                   : null
                 }
-                <Link to="/student/571a3d4e9cee3f9f2c8e9819">Me</Link>
               </div>
             </div>
             <div className="tests">

@@ -40320,12 +40320,7 @@
 	                  { href: this.state.student.website, target: '_blank' },
 	                  'Google сайт'
 	                )
-	              ) : null,
-	              _react2.default.createElement(
-	                _reactRouter.Link,
-	                { to: '/student/571a3d4e9cee3f9f2c8e9819' },
-	                'Me'
-	              )
+	              ) : null
 	            )
 	          ),
 	          _react2.default.createElement(
