@@ -40299,6 +40299,15 @@
 	                  { href: 'mailto:' + this.state.student.email },
 	                  this.state.student.email
 	                )
+	              ),
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'website field' },
+	                _react2.default.createElement(
+	                  'a',
+	                  { href: this.state.student.website, target: '_blank' },
+	                  'Google сайт'
+	                )
 	              )
 	            )
 	          ),
