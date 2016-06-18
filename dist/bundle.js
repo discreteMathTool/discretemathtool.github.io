@@ -42572,9 +42572,9 @@
 	            'p',
 	            null,
 	            'Найти обратный элемент к ',
-	            this.state.input[0],
-	            ' в поле вычетов по модулю b. Класс вычетов определяется остатком по модулю ',
 	            this.state.input[1],
+	            ' в поле вычетов по модулю b. Класс вычетов определяется остатком по модулю ',
+	            this.state.input[0],
 	            '. Или другими словами мы имеем уравнение'
 	          ),
 	          _react2.default.createElement(
@@ -42743,9 +42743,9 @@
 	            'p',
 	            null,
 	            'Найти обратный элемент к ',
-	            this.state.input[0],
-	            ' в поле вычетов по модулю ',
 	            this.state.input[1],
+	            ' в поле вычетов по модулю ',
+	            this.state.input[0],
 	            ' заполнив нужную часть таблицы расширенного алгоритма Евклид.Классы вычетов определяется остатком по модулю ',
 	            this.state.input[1]
 	          ),
@@ -43483,6 +43483,7 @@
 	      fetch('http://discrete-eltech.eurodir.ru:8888/test/diophantine?id=' + (0, _getCookie2.default)('student_id')).then(function (response) {
 	        return response.json();
 	      }).then(function (example) {
+	        console.log(example);
 	        var inputs = _reactDom2.default.findDOMNode(_this2).querySelectorAll('input[type="number"]'); // Fuck JavaScript
 	        [].forEach.call(inputs, function (input) {
 	          return input.value = '';
@@ -43495,6 +43496,12 @@
 	    value: function check() {
 	      var _this3 = this;
 
+	      var tableNode = _reactDom2.default.findDOMNode(this).querySelectorAll('.table tr');
+	      var table = [].map.call(tableNode, function (tr) {
+	        return [].map.call(tr.querySelectorAll('input[type="number"]'), function (input) {
+	          return input.value !== '' ? parseInt(input.value) : '';
+	        });
+	      });
 	      var output = {
 	        nod: this.refs.nod.value,
 	        a1: this.refs.a1.value,
@@ -43510,6 +43517,7 @@
 	        }),
 	        body: JSON.stringify({
 	          input: this.state.input,
+	          table: table,
 	          output: output,
 	          test_id: this.state.test_id
 	        })
@@ -43628,6 +43636,15 @@
 	              ),
 	              't'
 	            )
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'table' },
+	            _react2.default.createElement(_Table2.default, { data: this.state.table.map(function (row, i) {
+	                return row.map(function (col, j) {
+	                  return i == 1 && j < 2 ? _react2.default.createElement('input', { type: 'number', disabled: true }) : _react2.default.createElement('input', { type: 'number' });
+	                });
+	              }) })
 	          ),
 	          _react2.default.createElement(
 	            'div',
