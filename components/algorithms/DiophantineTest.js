@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import Table from '../Table'
+import getCookie from './getCookie'
 
 export default class DiophantineTest extends Component {
 
@@ -12,7 +13,7 @@ export default class DiophantineTest extends Component {
   state = {}
 
   refreshExample () {
-    fetch('http://88.201.187.23:8888/test/diophantine')
+    fetch('http://discrete-eltech.eurodir.ru:8888/test/diophantine?id=' + getCookie('student_id'))
       .then(response => response.json())
       .then(example => {
         let inputs = ReactDOM.findDOMNode(this).querySelectorAll('input[type="number"]'); // Fuck JavaScript
@@ -31,7 +32,7 @@ export default class DiophantineTest extends Component {
       x   : [this.refs.x0.value, this.refs.x1.value],
       y   : [this.refs.y0.value, this.refs.y1.value],
     }
-    fetch('http://88.201.187.23:8888/test/diophantine/', {
+    fetch('http://discrete-eltech.eurodir.ru:8888/test/diophantine/', {
       method  : 'post',
       headers : new Headers({
         'Content-Type': 'application/json'

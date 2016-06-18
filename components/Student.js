@@ -7,7 +7,7 @@ export default class Student extends Component {
   constructor (props) {
     super(props)
     
-    fetch('http://88.201.187.23:8888/s/' + this.props.params.studentID + '/info')
+    fetch('http://discrete-eltech.eurodir.ru:8888/s/' + this.props.params.studentID + '/info')
       .then(response => response.json())
       .then(student => {
         this.setState({
@@ -17,7 +17,7 @@ export default class Student extends Component {
       })
       .catch(console.error)
 
-    fetch('http://88.201.187.23:8888/s/' + this.props.params.studentID + '/tests')
+    fetch('http://discrete-eltech.eurodir.ru:8888/s/' + this.props.params.studentID + '/tests')
       .then(response => response.json())
       .then(tests => {
         this.setState({
