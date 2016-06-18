@@ -38899,7 +38899,7 @@
 	          null,
 	          _react2.default.createElement(
 	            'a',
-	            { href: 'http://discrete-eltech.eurodir.ru:8888/otchet.docx', target: '_blank' },
+	            { href: 'http://discrete-eltech.eurodir.ru:8888/generatedoc', target: '_blank' },
 	            'Отчет'
 	          )
 	        )
