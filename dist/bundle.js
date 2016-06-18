@@ -40300,7 +40300,7 @@
 	                  this.state.student.email
 	                )
 	              ),
-	              _react2.default.createElement(
+	              this.state.student.website ? _react2.default.createElement(
 	                'div',
 	                { className: 'website field' },
 	                _react2.default.createElement(
@@ -40308,7 +40308,7 @@
 	                  { href: this.state.student.website, target: '_blank' },
 	                  'Google сайт'
 	                )
-	              )
+	              ) : null
 	            )
 	          ),
 	          _react2.default.createElement(

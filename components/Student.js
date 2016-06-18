@@ -44,9 +44,12 @@ export default class Student extends Component {
                 <div className="email field">
                   <a href={'mailto:' + this.state.student.email}>{this.state.student.email}</a>
                 </div>
-                <div className="website field">
-                  <a href={this.state.student.website} target="_blank">Google сайт</a>
-                </div>
+                {this.state.student.website ?
+                  <div className="website field">
+                    <a href={this.state.student.website} target="_blank">Google сайт</a>
+                  </div>
+                  : null
+                }
               </div>
             </div>
             <div className="tests">
