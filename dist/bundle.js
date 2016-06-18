@@ -40240,25 +40240,37 @@
 
 	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Student).call(this, props));
 
-	    fetch('http://discrete-eltech.eurodir.ru:8888/s/' + _this.props.params.studentID + '/info').then(function (response) {
-	      return response.json();
-	    }).then(function (student) {
-	      _this.setState(_extends({}, _this.state, {
-	        student: student
-	      }));
-	    }).catch(console.error);
-
-	    fetch('http://discrete-eltech.eurodir.ru:8888/s/' + _this.props.params.studentID + '/tests').then(function (response) {
-	      return response.json();
-	    }).then(function (tests) {
-	      _this.setState(_extends({}, _this.state, {
-	        tests: tests
-	      }));
-	    }).catch(console.error);
+	    _this.loadStudentInfo(_this.props);
 	    return _this;
 	  }
 
 	  _createClass(Student, [{
+	    key: 'loadStudentInfo',
+	    value: function loadStudentInfo(props) {
+	      var _this2 = this;
+
+	      fetch('http://discrete-eltech.eurodir.ru:8888/s/' + props.params.studentID + '/info').then(function (response) {
+	        return response.json();
+	      }).then(function (student) {
+	        _this2.setState(_extends({}, _this2.state, {
+	          student: student
+	        }));
+	      }).catch(console.error);
+
+	      fetch('http://discrete-eltech.eurodir.ru:8888/s/' + props.params.studentID + '/tests').then(function (response) {
+	        return response.json();
+	      }).then(function (tests) {
+	        _this2.setState(_extends({}, _this2.state, {
+	          tests: tests
+	        }));
+	      }).catch(console.error);
+	    }
+	  }, {
+	    key: 'componentWillReceiveProps',
+	    value: function componentWillReceiveProps(nextProps) {
+	      this.loadStudentInfo(nextProps);
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
 	      return _react2.default.createElement(
@@ -40308,7 +40320,12 @@
 	                  { href: this.state.student.website, target: '_blank' },
 	                  'Google сайт'
 	                )
-	              ) : null
+	              ) : null,
+	              _react2.default.createElement(
+	                _reactRouter.Link,
+	                { to: '/student/571a3d4e9cee3f9f2c8e9819' },
+	                'Me'
+	              )
 	            )
 	          ),
 	          _react2.default.createElement(

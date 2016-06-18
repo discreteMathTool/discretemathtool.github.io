@@ -23,7 +23,8 @@ export default function Header () {
             </a>
           </li>
         </ul>
-        {studentID ? <Link to={'/student/' + studentID} className="button">Личный кабинет</Link> : 
+        {studentID ? 
+          <Link to={'/student/' + studentID} className="button">Личный кабинет</Link> : 
           <a href="/auth/google" className="button">Войти через Google</a>}
       </nav>
     </header>
