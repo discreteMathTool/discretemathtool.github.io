@@ -57,7 +57,7 @@ export default class InverseTest extends Component {
         <h2>Контроль</h2>
         {this.state.input ? 
           <div>
-            <p>Найти обратный элемент к {this.state.input[0]} в поле вычетов по модулю {this.state.input[1]} заполнив нужную часть таблицы расширенного алгоритма Евклида. Классы вычетов определяется остатком по модулю {this.state.input[1]}</p>
+            <p>Найти обратный элемент к {this.state.input[1]} в поле вычетов по модулю {this.state.input[0]} заполнив нужную часть таблицы расширенного алгоритма Евклида. Классы вычетов определяется остатком по модулю {this.state.input[1]}</p>
             <div className="table">
               <Table data={this.state.table.map((row, i) => row.map((col, j) => {
                 return i == 1 && j < 2 ? <input type="number" disabled={true}/> : <input type="number"/>
