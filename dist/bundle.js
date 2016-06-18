@@ -42580,9 +42580,9 @@
 	          _react2.default.createElement(
 	            'p',
 	            null,
-	            this.state.input[0],
+	            this.state.input[1],
 	            'x = 1 mod ',
-	            this.state.input[1]
+	            this.state.input[0]
 	          ),
 	          _react2.default.createElement(
 	            'p',
@@ -42592,18 +42592,18 @@
 	          _react2.default.createElement(
 	            'p',
 	            null,
-	            this.state.input[0],
-	            'x - ',
 	            this.state.input[1],
+	            'x - ',
+	            this.state.input[0],
 	            'y = 1'
 	          ),
 	          _react2.default.createElement(
 	            'p',
 	            null,
 	            'применим к ',
-	            this.state.input[0],
-	            ' и ',
 	            this.state.input[1],
+	            ' и ',
+	            this.state.input[0],
 	            ' расширенный алгоритм Евклида. Если x < 0 нужно прибавить к нему модуль кольца вычетов'
 	          ),
 	          _react2.default.createElement(_Table2.default, { data: this.state.table.map(function (row) {
@@ -42747,7 +42747,7 @@
 	            ' в поле вычетов по модулю ',
 	            this.state.input[0],
 	            ' заполнив нужную часть таблицы расширенного алгоритма Евклид.Классы вычетов определяется остатком по модулю ',
-	            this.state.input[1]
+	            this.state.input[0]
 	          ),
 	          _react2.default.createElement(_Table2.default, { data: this.state.table.map(function (row) {
 	              return row.map(function (col) {
@@ -42921,7 +42921,7 @@
 	            ' в поле вычетов по модулю ',
 	            this.state.input[0],
 	            ' заполнив нужную часть таблицы расширенного алгоритма Евклида. Классы вычетов определяется остатком по модулю ',
-	            this.state.input[1]
+	            this.state.input[0]
 	          ),
 	          _react2.default.createElement(
 	            'div',
