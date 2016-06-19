@@ -40260,6 +40260,9 @@
 	      fetch('http://discrete-eltech.eurodir.ru:8888/s/' + props.params.studentID + '/tests').then(function (response) {
 	        return response.json();
 	      }).then(function (tests) {
+	        console.log(_extends({}, _this2.state, {
+	          tests: tests
+	        }));
 	        _this2.setState(_extends({}, _this2.state, {
 	          tests: tests
 	        }));
@@ -40391,7 +40394,7 @@
 	                      _react2.default.createElement(
 	                        'div',
 	                        null,
-	                        test.object.output
+	                        JSON.stringify(test.object.output)
 	                      )
 	                    ) : null
 	                  );
